@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MyCollectionViewCellDelegate: AnyObject {
-    func didTapButtonInCell(_ cell: QuestionsCollectionViewCell)
+    func didTapButtonInCell(_ cell: QuestionsCollectionViewCell,points:Int)
 }
 
 class QuestionsCollectionViewCell: UICollectionViewCell {
@@ -66,15 +66,19 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
             sender.backgroundColor = UIColor(hex: "#4CAF50")
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.delegate?.didTapButtonInCell(self, points: 1)
+            }
         }else{
             fadeInShakeAndFadeOut(imageView: responseImgView)
             sender.backgroundColor = UIColor(hex: "#FF5252")
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.delegate?.didTapButtonInCell(self, points: 0)
+            }
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.delegate?.didTapButtonInCell(self)
-        }
+        
     }
     
     @IBAction func optionBtn2Clicked(_ sender: UIButton) {
@@ -83,14 +87,17 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
             sender.backgroundColor = UIColor(hex: "#4CAF50")
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.delegate?.didTapButtonInCell(self, points: 1)
+            }
         }else{
             fadeInShakeAndFadeOut(imageView: responseImgView)
             sender.backgroundColor = UIColor(hex: "#FF5252")
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.delegate?.didTapButtonInCell(self)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.delegate?.didTapButtonInCell(self, points: 0)
+            }
         }
     }
     
@@ -100,14 +107,17 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
             sender.backgroundColor = UIColor(hex: "#4CAF50")
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.delegate?.didTapButtonInCell(self, points: 1)
+            }
         }else{
             fadeInShakeAndFadeOut(imageView: responseImgView)
             sender.backgroundColor = UIColor(hex: "#FF5252")
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.delegate?.didTapButtonInCell(self)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.delegate?.didTapButtonInCell(self, points: 0)
+            }
         }
     }
     
@@ -117,15 +127,17 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
             sender.backgroundColor = UIColor(hex: "#4CAF50")
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.delegate?.didTapButtonInCell(self, points: 1)
+            }
         }else{
             fadeInShakeAndFadeOut(imageView: responseImgView)
             sender.backgroundColor = UIColor(hex: "#FF5252")
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-            self.delegate?.didTapButtonInCell(self)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.delegate?.didTapButtonInCell(self, points: 0)
+            }
         }
     }
     

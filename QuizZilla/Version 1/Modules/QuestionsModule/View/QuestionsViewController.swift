@@ -9,6 +9,8 @@ import UIKit
 
 class QuestionsViewController: UIViewController {
     
+    @IBOutlet weak var pointLbl: UILabel!
+    @IBOutlet weak var pointImgView: UIImageView!
     @IBOutlet weak var categoryLbl: UILabel!
     @IBOutlet weak var questionsCollectionView: UICollectionView!
     @IBOutlet weak var backBtn: UIButton!
@@ -16,15 +18,15 @@ class QuestionsViewController: UIViewController {
     var viewModel : QuestionsViewModel?
     var categoryStr: String?
     
+    var points:Int = 0 {
+        didSet{
+            pointLbl.text = "\(points)"
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        self.categoryLbl.text = categoryStr
-        viewModel?.getQuestions {
-            DispatchQueue.main.async {
-                self.questionsCollectionView.reloadData()
-            }
-        }
     }
     
     private func setupUI(){
@@ -32,6 +34,15 @@ class QuestionsViewController: UIViewController {
         questionsCollectionView.dataSource = self
         questionsCollectionView.register(UINib(nibName: "QuestionsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "QuestionsCollectionViewCell")
         questionsCollectionView.isScrollEnabled = false
+        self.categoryLbl.text = categoryStr
+        
+        viewModel?.getQuestions {
+            DispatchQueue.main.async {
+                self.questionsCollectionView.reloadData()
+            }
+        }
+        
+        points = 0
     }
     
     @IBAction func backBtnClicked(_ sender: Any) {
@@ -78,7 +89,9 @@ extension QuestionsViewController: UICollectionViewDelegate,UICollectionViewData
 }
 
 extension QuestionsViewController: MyCollectionViewCellDelegate{
-    func didTapButtonInCell(_ cell: QuestionsCollectionViewCell) {
+    
+    func didTapButtonInCell(_ cell: QuestionsCollectionViewCell,points:Int) {
+        self.points = self.points+points
         guard let indexPath = questionsCollectionView.indexPath(for: cell) else { return }
         if let count = viewModel?.getQuestionsCount(){
             if indexPath.row < count - 1 {
