@@ -23,7 +23,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
         contView.layer.cornerRadius = 15
         contView.layer.shadowColor = UIColor.gray.cgColor
         contView.layer.shadowOffset = CGSize(width: 0, height: 0)
-        contView.layer.shadowOpacity = 0.2
+        contView.layer.shadowOpacity = 0.3
         contView.layer.shadowRadius = 5
         contView.layer.masksToBounds = false
     }

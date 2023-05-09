@@ -31,6 +31,7 @@ class QuestionsViewController: UIViewController {
         questionsCollectionView.delegate = self
         questionsCollectionView.dataSource = self
         questionsCollectionView.register(UINib(nibName: "QuestionsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "QuestionsCollectionViewCell")
+        questionsCollectionView.isScrollEnabled = false
     }
     
     @IBAction func backBtnClicked(_ sender: Any) {
@@ -56,6 +57,7 @@ extension QuestionsViewController: UICollectionViewDelegate,UICollectionViewData
             cell.option2Btn.setTitle(model[1], for: .normal)
             cell.option3Btn.setTitle(model[2], for: .normal)
             cell.option4Btn.setTitle(model[3], for: .normal)
+            cell.delegate = self
         }
         return cell
     }
@@ -73,4 +75,17 @@ extension QuestionsViewController: UICollectionViewDelegate,UICollectionViewData
     }
     
     
+}
+
+extension QuestionsViewController: MyCollectionViewCellDelegate{
+    func didTapButtonInCell(_ cell: QuestionsCollectionViewCell) {
+        guard let indexPath = questionsCollectionView.indexPath(for: cell) else { return }
+        if let count = viewModel?.getQuestionsCount(){
+            if indexPath.row < count - 1 {
+                let nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+                questionsCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+            }
+        }
+        
+    }
 }

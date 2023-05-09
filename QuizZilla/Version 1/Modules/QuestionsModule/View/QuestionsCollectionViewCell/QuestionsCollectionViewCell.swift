@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MyCollectionViewCellDelegate: AnyObject {
+    func didTapButtonInCell(_ cell: QuestionsCollectionViewCell)
+}
+
 class QuestionsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var responseImgView: UIImageView!
@@ -17,6 +21,8 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var option2Btn: UIButton!
     @IBOutlet weak var option3Btn: UIButton!
     @IBOutlet weak var option4Btn: UIButton!
+    
+    var delegate:MyCollectionViewCellDelegate?
     
     var correctAns:String?
     
@@ -80,6 +86,9 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.delegate?.didTapButtonInCell(self)
+        }
     }
     
     @IBAction func optionBtn2Clicked(_ sender: UIButton) {
@@ -94,6 +103,9 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
         }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.delegate?.didTapButtonInCell(self)
+        }
     }
     @IBAction func optionBtn3Clicked(_ sender: UIButton) {
         if sender.currentTitle == correctAns{
@@ -106,6 +118,9 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
             sender.backgroundColor = UIColor(hex: "#FF5252")
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.delegate?.didTapButtonInCell(self)
         }
     }
     
@@ -120,6 +135,10 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
             sender.backgroundColor = UIColor(hex: "#FF5252")
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.delegate?.didTapButtonInCell(self)
         }
     }
     
