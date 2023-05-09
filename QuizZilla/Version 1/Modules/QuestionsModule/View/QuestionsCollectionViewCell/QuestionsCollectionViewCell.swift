@@ -51,20 +51,6 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private func animateButton(_ button: UIButton,correct:Bool) {
-        UIView.animate(withDuration: 0.2, animations: {
-            if correct == true{
-                button.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-            }else{
-                button.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
-            }
-        }, completion: { _ in
-            UIView.animate(withDuration: 0.2) {
-                button.transform = CGAffineTransform.identity
-            }
-        })
-    }
-    
     private func addShadow(to button: UIButton) {
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -107,6 +93,7 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
             self.delegate?.didTapButtonInCell(self)
         }
     }
+    
     @IBAction func optionBtn3Clicked(_ sender: UIButton) {
         if sender.currentTitle == correctAns{
             fadeInRotateAndFadeOutImageView(imageView: responseImgView)
@@ -142,9 +129,9 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    
 }
 
+//MARK: - Animation Functions
 extension QuestionsCollectionViewCell{
     private func fadeInShakeAndFadeOut(imageView: UIImageView) {
         self.isUserInteractionEnabled = false
@@ -197,5 +184,19 @@ extension QuestionsCollectionViewCell{
                 self.isUserInteractionEnabled = true
             }
         }
+    }
+    
+    private func animateButton(_ button: UIButton,correct:Bool) {
+        UIView.animate(withDuration: 0.2, animations: {
+            if correct == true{
+                button.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+            }else{
+                button.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+            }
+        }, completion: { _ in
+            UIView.animate(withDuration: 0.2) {
+                button.transform = CGAffineTransform.identity
+            }
+        })
     }
 }
