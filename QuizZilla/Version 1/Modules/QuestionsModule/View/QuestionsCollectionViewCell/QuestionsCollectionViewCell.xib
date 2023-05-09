@@ -18,12 +18,14 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 4" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgo-ft-1lM">
                         <rect key="frame" x="20" y="100" width="327" height="23.333333333333329"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who won the Fifa World Cup 2022?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5g-9W-qVI">
                         <rect key="frame" x="20" y="133.33333333333334" width="327" height="58.333333333333343"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="25"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -34,12 +36,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GiA-QT-68q">
                                 <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="130"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rwx-C7-eCs">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Rwx-C7-eCs">
                                         <rect key="frame" x="0.0" y="0.0" width="158.66666666666666" height="60"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Option 1"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Option 1">
+                                                    <attributes>
+                                                        <font key="NSFont" size="18" name="TrebuchetMS-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="btn1Clicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="o0p-yO-NR8"/>
                                         </connections>
@@ -49,7 +60,16 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Option 3"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Option 3">
+                                                    <attributes>
+                                                        <font key="NSFont" size="18" name="TrebuchetMS-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="optionBtn3Clicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="iJl-1L-z79"/>
                                         </connections>
@@ -64,7 +84,16 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Option 2"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Option 2">
+                                                    <attributes>
+                                                        <font key="NSFont" size="18" name="TrebuchetMS-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="optionBtn2Clicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="KI4-A5-ZtU"/>
                                         </connections>
@@ -74,7 +103,16 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Option 4"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Option 4">
+                                                    <attributes>
+                                                        <font key="NSFont" size="18" name="TrebuchetMS-Bold"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
                                         <connections>
                                             <action selector="optionBtn4Clicked:" destination="gTV-IL-0wX" eventType="touchUpInside" id="fOu-9e-eaz"/>
                                         </connections>
@@ -86,15 +124,25 @@
                             <constraint firstAttribute="height" constant="130" id="d30-Au-2XB"/>
                         </constraints>
                     </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r8P-Hv-K7P">
+                        <rect key="frame" x="83.666666666666686" y="303" width="200" height="200"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="Jv6-P3-NxA"/>
+                            <constraint firstAttribute="width" constant="200" id="nU5-UI-hZC"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="A5g-9W-qVI" firstAttribute="top" secondItem="Hgo-ft-1lM" secondAttribute="bottom" constant="10" id="4Qc-gg-DDj"/>
+                <constraint firstItem="r8P-Hv-K7P" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Ltn-Ek-Qws"/>
                 <constraint firstItem="Q01-1N-n0I" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="QJ3-X2-Ekq"/>
                 <constraint firstAttribute="bottom" secondItem="Q01-1N-n0I" secondAttribute="bottom" constant="50" id="R1t-XA-xwN"/>
                 <constraint firstItem="Hgo-ft-1lM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="XhP-no-Ktv"/>
+                <constraint firstItem="r8P-Hv-K7P" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="fbi-I4-wzL"/>
                 <constraint firstItem="Hgo-ft-1lM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="100" id="ghl-ta-vnW"/>
                 <constraint firstItem="A5g-9W-qVI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="gvW-ai-01h"/>
                 <constraint firstAttribute="trailing" secondItem="A5g-9W-qVI" secondAttribute="trailing" constant="20" id="p6z-BC-4c1"/>
@@ -109,6 +157,7 @@
                 <outlet property="option4Btn" destination="XZD-IO-rAo" id="jpw-3V-YX7"/>
                 <outlet property="questionLbl" destination="A5g-9W-qVI" id="hyH-sY-zrN"/>
                 <outlet property="questionNumberLbl" destination="Hgo-ft-1lM" id="EbI-y2-Ggd"/>
+                <outlet property="responseImgView" destination="r8P-Hv-K7P" id="Ex8-we-uip"/>
             </connections>
             <point key="canvasLocation" x="63.846153846153847" y="305.68720379146919"/>
         </collectionViewCell>

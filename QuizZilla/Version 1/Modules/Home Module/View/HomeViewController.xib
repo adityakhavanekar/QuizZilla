@@ -22,17 +22,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Jf-sX-Krk" userLabel="TopView">
-                    <rect key="frame" x="0.0" y="47" width="390" height="50"/>
+                    <rect key="frame" x="0.0" y="47" width="390" height="60"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="TLV-6i-OEY">
-                            <rect key="frame" x="20" y="5" width="40" height="40"/>
+                            <rect key="frame" x="20" y="10" width="40" height="40"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="cym-2G-66h"/>
                                 <constraint firstAttribute="width" constant="40" id="f8g-Su-vJY"/>
                             </constraints>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu" translatesAutoresizingMaskIntoConstraints="NO" id="90f-s5-eE7">
-                            <rect key="frame" x="330" y="5" width="40" height="40"/>
+                            <rect key="frame" x="330" y="10" width="40" height="40"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="36m-U1-e8a"/>
@@ -40,8 +40,8 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quiz Zilla" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6VQ-PQ-ONA">
-                            <rect key="frame" x="80" y="11.666666666666664" width="230" height="27"/>
-                            <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="23"/>
+                            <rect key="frame" x="80" y="12.666666666666664" width="230" height="35"/>
+                            <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
                             <color key="textColor" red="0.84313725490196079" green="0.54509803921568623" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -51,7 +51,7 @@
                         <constraint firstItem="6VQ-PQ-ONA" firstAttribute="leading" secondItem="TLV-6i-OEY" secondAttribute="trailing" constant="20" id="BTE-lD-0wf"/>
                         <constraint firstAttribute="trailing" secondItem="90f-s5-eE7" secondAttribute="trailing" constant="20" id="QoX-7B-3vP"/>
                         <constraint firstItem="90f-s5-eE7" firstAttribute="centerY" secondItem="0Jf-sX-Krk" secondAttribute="centerY" id="ekq-iq-GSw"/>
-                        <constraint firstAttribute="height" constant="50" id="h8C-Bm-QDy"/>
+                        <constraint firstAttribute="height" constant="60" id="h8C-Bm-QDy"/>
                         <constraint firstItem="TLV-6i-OEY" firstAttribute="leading" secondItem="0Jf-sX-Krk" secondAttribute="leading" constant="20" id="hKe-p4-EQT"/>
                         <constraint firstItem="TLV-6i-OEY" firstAttribute="centerY" secondItem="0Jf-sX-Krk" secondAttribute="centerY" id="lHj-iJ-Mxc"/>
                         <constraint firstItem="6VQ-PQ-ONA" firstAttribute="centerY" secondItem="0Jf-sX-Krk" secondAttribute="centerY" id="quz-Zr-mAu"/>
@@ -59,13 +59,16 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey, What subject you want to play today?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ett-iv-qYX">
-                    <rect key="frame" x="20" y="127.00000000000001" width="350" height="46.666666666666671"/>
+                    <rect key="frame" x="20" y="137" width="350" height="46.666666666666657"/>
                     <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
+                    <variation key="heightClass=regular-widthClass=regular">
+                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="45"/>
+                    </variation>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jDO-re-aI2">
-                    <rect key="frame" x="20" y="203.66666666666669" width="350" height="606.33333333333326"/>
+                    <rect key="frame" x="20" y="213.66666666666669" width="350" height="596.33333333333326"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h9F-z4-Bda">
                         <size key="itemSize" width="128" height="128"/>

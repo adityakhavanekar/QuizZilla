@@ -9,6 +9,7 @@ import UIKit
 
 class QuestionsCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var responseImgView: UIImageView!
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var questionNumberLbl: UILabel!
     
@@ -29,12 +30,13 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupUI(){
+        responseImgView.isHidden = true
         setupButtons(buttons: [option1Btn,option2Btn,option3Btn,option4Btn])
     }
     
     private func setupButtons(buttons:[UIButton]){
         for btn in buttons{
-            btn.tintColor = .black
+            btn.setTitleColor(.black, for: .normal)
             btn.backgroundColor = .clear
             btn.layer.borderWidth = 1
             btn.layer.borderColor = UIColor.lightGray.cgColor
@@ -68,50 +70,113 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
     
     @IBAction func btn1Clicked(_ sender: UIButton) {
         if sender.currentTitle == correctAns{
+            fadeInRotateAndFadeOutImageView(imageView: responseImgView)
             sender.backgroundColor = UIColor(hex: "#4CAF50")
-            sender.tintColor  = .white
+            sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: true)
         }else{
+            fadeInShakeAndFadeOut(imageView: responseImgView)
             sender.backgroundColor = UIColor(hex: "#FF5252")
-            sender.tintColor  = .white
+            sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
         }
     }
     
     @IBAction func optionBtn2Clicked(_ sender: UIButton) {
         if sender.currentTitle == correctAns{
+            fadeInRotateAndFadeOutImageView(imageView: responseImgView)
             sender.backgroundColor = UIColor(hex: "#4CAF50")
-            sender.tintColor  = .white
+            sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: true)
         }else{
+            fadeInShakeAndFadeOut(imageView: responseImgView)
             sender.backgroundColor = UIColor(hex: "#FF5252")
-            sender.tintColor  = .white
+            sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
         }
     }
     @IBAction func optionBtn3Clicked(_ sender: UIButton) {
         if sender.currentTitle == correctAns{
+            fadeInRotateAndFadeOutImageView(imageView: responseImgView)
             sender.backgroundColor = UIColor(hex: "#4CAF50")
-            sender.tintColor  = .white
+            sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: true)
         }else{
+            fadeInShakeAndFadeOut(imageView: responseImgView)
             sender.backgroundColor = UIColor(hex: "#FF5252")
-            sender.tintColor  = .white
+            sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
         }
     }
     
     @IBAction func optionBtn4Clicked(_ sender: UIButton) {
         if sender.currentTitle == correctAns{
+            fadeInRotateAndFadeOutImageView(imageView: responseImgView)
             sender.backgroundColor = UIColor(hex: "#4CAF50")
-            sender.tintColor  = .white
+            sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: true)
         }else{
+            fadeInShakeAndFadeOut(imageView: responseImgView)
             sender.backgroundColor = UIColor(hex: "#FF5252")
-            sender.tintColor  = .white
+            sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
         }
     }
     
     
+}
+
+extension QuestionsCollectionViewCell{
+    private func fadeInShakeAndFadeOut(imageView: UIImageView) {
+        self.isUserInteractionEnabled = false
+        
+        imageView.image = UIImage(named: "wrong")
+        imageView.isHidden = false
+        imageView.alpha = 0.0
+        
+        UIView.animate(withDuration: 0.2) {
+            imageView.alpha = 1.0
+        } completion: { _ in
+            let shakeAnimation = CABasicAnimation(keyPath: "position")
+            shakeAnimation.duration = 0.02
+            shakeAnimation.repeatCount = 10
+            shakeAnimation.autoreverses = false
+            shakeAnimation.fromValue = CGPoint(x: imageView.center.x - 10, y: imageView.center.y)
+            shakeAnimation.toValue = CGPoint(x: imageView.center.x + 10, y: imageView.center.y)
+            
+            
+            imageView.layer.add(shakeAnimation, forKey: "position")
+            
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                UIView.animate(withDuration: 0.2) {
+                    imageView.alpha = 0.0
+                } completion: { _ in
+                    imageView.isHidden = true
+                    self.isUserInteractionEnabled = true
+                }
+            }
+        }
+        
+    }
+    
+    func fadeInRotateAndFadeOutImageView(imageView:UIImageView) {
+        self.isUserInteractionEnabled = false
+        imageView.image = UIImage(named: "correct")
+        imageView.alpha = 0.0
+        imageView.isHidden = false
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseInOut, animations: {
+            imageView.alpha = 1.0
+            imageView.transform = CGAffineTransform(rotationAngle: 2*(.pi))
+        }) { _ in
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {
+                imageView.alpha = 0.0
+            }) { _ in
+                imageView.isHidden = true
+                imageView.transform = .identity
+                self.isUserInteractionEnabled = true
+            }
+        }
+    }
 }
