@@ -30,6 +30,7 @@ class QuestionsViewController: UIViewController {
     }
     
     private func setupUI(){
+        points = 0
         questionsCollectionView.delegate = self
         questionsCollectionView.dataSource = self
         questionsCollectionView.register(UINib(nibName: "QuestionsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "QuestionsCollectionViewCell")
@@ -41,8 +42,6 @@ class QuestionsViewController: UIViewController {
                 self.questionsCollectionView.reloadData()
             }
         }
-        
-        points = 0
     }
     
     @IBAction func backBtnClicked(_ sender: Any) {
