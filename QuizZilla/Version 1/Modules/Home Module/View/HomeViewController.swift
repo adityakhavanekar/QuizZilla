@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -49,6 +49,9 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         case 2:
             cell.titleLbl.text = "Science"
             cell.imgView.image = UIImage(named: "Science")
+        case 3:
+            cell.titleLbl.text = "Music"
+            cell.imgView.image = UIImage(named: "music")
         default:
             print("")
         }
@@ -72,6 +75,9 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         case 2:
             vc.categoryStr = "Science"
             vc.viewModel = QuestionsViewModel(url: URL(string: "http://localhost:3000/scienceQuestions")!)
+        case 3:
+            vc.categoryStr = "Music"
+            vc.viewModel = QuestionsViewModel(url: URL(string: "http://localhost:3000/musicQuestions")!)
         default:
             print("")
         }

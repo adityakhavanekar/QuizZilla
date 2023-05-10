@@ -49,6 +49,7 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
     private func setupButtons(buttons:[UIButton]){
         for btn in buttons{
             btn.setTitleColor(.black, for: .normal)
+            btn.setTitleColor(UIColor(hex: "#E4B7C5"), for: .disabled)
             btn.backgroundColor = .clear
             btn.layer.borderWidth = 1
             btn.layer.borderColor = UIColor.lightGray.cgColor
