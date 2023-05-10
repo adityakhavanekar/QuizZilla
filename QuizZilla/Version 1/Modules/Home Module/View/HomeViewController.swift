@@ -19,6 +19,9 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
+    override func viewDidAppear(_ animated: Bool) {
+        self.homeCollectionView.isUserInteractionEnabled = true
+    }
     
     private func setupUI(){
         self.navigationController?.isNavigationBarHidden = true
@@ -34,7 +37,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,6 +55,9 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         case 3:
             cell.titleLbl.text = "Music"
             cell.imgView.image = UIImage(named: "music")
+        case 4:
+            cell.titleLbl.text = "Movies"
+            cell.imgView.image = UIImage(named: "movies")
         default:
             print("")
         }
@@ -78,9 +84,13 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         case 3:
             vc.categoryStr = "Music"
             vc.viewModel = QuestionsViewModel(url: URL(string: "http://localhost:3000/musicQuestions")!)
+        case 4:
+            vc.categoryStr = "Movies"
+            vc.viewModel = QuestionsViewModel(url: URL(string: "http://localhost:3000/movieQuestions")!)
         default:
             print("")
         }
+        self.homeCollectionView.isUserInteractionEnabled = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
