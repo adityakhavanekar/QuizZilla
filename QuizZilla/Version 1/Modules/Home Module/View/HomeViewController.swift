@@ -25,6 +25,7 @@ class HomeViewController: UIViewController {
     
     private func setupUI(){
         self.navigationController?.isNavigationBarHidden = true
+        homeCollectionView.layer.cornerRadius = 30
         questionLbl.text = "Hey, What subject you want to play today?"
         homeCollectionView.dataSource = self
         homeCollectionView.delegate =  self
