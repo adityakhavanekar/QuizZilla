@@ -20,6 +20,7 @@ class QuestionsViewController: UIViewController {
     
     var points:Int = 0 {
         didSet{
+            animateImageView(imageView: pointImgView)
             pointLbl.text = "\(points)"
         }
     }
@@ -90,14 +91,32 @@ extension QuestionsViewController: UICollectionViewDelegate,UICollectionViewData
 extension QuestionsViewController: MyCollectionViewCellDelegate{
     
     func didTapButtonInCell(_ cell: QuestionsCollectionViewCell,points:Int) {
-        self.points = self.points+points
+        if points > 0{
+            self.points = self.points+points
+        }
         guard let indexPath = questionsCollectionView.indexPath(for: cell) else { return }
         if let count = viewModel?.getQuestionsCount(){
             if indexPath.row < count - 1 {
                 let nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
                 questionsCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+            }else{
+                
             }
         }
         
     }
+}
+
+extension QuestionsViewController{
+    
+    func animateImageView(imageView: UIImageView) {
+        UIView.animate(withDuration: 0.2, animations: {
+            imageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }, completion: { finished in
+            UIView.animate(withDuration: 0.2, animations: {
+                imageView.transform = CGAffineTransform.identity
+            })
+        })
+    }
+    
 }
