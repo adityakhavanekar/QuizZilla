@@ -100,7 +100,7 @@ extension QuestionsViewController: MyCollectionViewCellDelegate{
                 let nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
                 questionsCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
             }else{
-                
+                print("Last Item")
             }
         }
         
