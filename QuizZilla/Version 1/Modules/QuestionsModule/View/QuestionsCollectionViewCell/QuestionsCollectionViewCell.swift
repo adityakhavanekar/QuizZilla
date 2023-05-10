@@ -71,16 +71,20 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
             sender.backgroundColor = UIColor(hex: "#4CAF50")
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: true)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+                self.delegate?.didTapButtonInCell(self, points: 1)
+            }
         case false:
             setAnimationView(animationName: "xMark", speed: 1.5)
             sender.backgroundColor = UIColor(hex: "#FF5252")
             sender.setTitleColor(.white, for: .normal)
             animateButton(sender, correct: false)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
+                self.delegate?.didTapButtonInCell(self, points: 0)
+            }
         }
         self.isUserInteractionEnabled = false
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3){
-            self.delegate?.didTapButtonInCell(self, points: 0)
-        }
+        
     }
     
     @IBAction func btn1Clicked(_ sender: UIButton) {
