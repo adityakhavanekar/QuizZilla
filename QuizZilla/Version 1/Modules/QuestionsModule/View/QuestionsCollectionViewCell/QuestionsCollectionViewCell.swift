@@ -48,7 +48,7 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
         hintImgView.addGestureRecognizer(tapGesture)
         hintImgView.image = UIImage(named: "tip")
         
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.3){
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.6){
             self.isUserInteractionEnabled = true
         }
     }

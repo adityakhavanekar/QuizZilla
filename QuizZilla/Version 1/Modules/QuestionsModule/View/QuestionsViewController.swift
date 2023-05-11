@@ -98,7 +98,9 @@ extension QuestionsViewController: MyCollectionViewCellDelegate{
         if let count = viewModel?.getQuestionsCount(){
             if indexPath.row < count - 1 {
                 let nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
-                questionsCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.5){
+                    self.questionsCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+                }
             }else{
                 print("Last Item")
             }
