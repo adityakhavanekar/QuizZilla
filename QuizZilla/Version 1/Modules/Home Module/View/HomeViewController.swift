@@ -24,6 +24,7 @@ class HomeViewController: UIViewController {
     }
     
     private func setupUI(){
+        self.navigationController?.delegate = self
         self.navigationController?.isNavigationBarHidden = true
         homeCollectionView.layer.cornerRadius = 30
         questionLbl.text = "Hey, What subject you want to play today?"
@@ -103,4 +104,14 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 15
     }
+}
+
+
+extension HomeViewController:UINavigationControllerDelegate, UIViewControllerTransitioningDelegate{
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+            if operation == .push {
+                return CustomPushTransition()
+            }
+            return nil
+        }
 }

@@ -31,6 +31,11 @@
 		18A461872A0A7B9C0085BD81 /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A461862A0A7B9C0085BD81 /* QuestionsViewModel.swift */; };
 		18E47D7C2A0BB06800E0A496 /* xMark.json in Resources */ = {isa = PBXBuildFile; fileRef = 18E47D7B2A0BB06800E0A496 /* xMark.json */; };
 		18E47D7E2A0BB56800E0A496 /* TickMark.json in Resources */ = {isa = PBXBuildFile; fileRef = 18E47D7D2A0BB56800E0A496 /* TickMark.json */; };
+		18E47D832A0CEDD300E0A496 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E47D812A0CEDD300E0A496 /* ResultViewController.swift */; };
+		18E47D842A0CEDD300E0A496 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E47D822A0CEDD300E0A496 /* ResultViewController.xib */; };
+		18E47D882A0CF5AF00E0A496 /* tryAgain.json in Resources */ = {isa = PBXBuildFile; fileRef = 18E47D872A0CF5AF00E0A496 /* tryAgain.json */; };
+		18E47D8A2A0CF94800E0A496 /* Celebration.json in Resources */ = {isa = PBXBuildFile; fileRef = 18E47D892A0CF94800E0A496 /* Celebration.json */; };
+		18E47D8D2A0D37A100E0A496 /* CustomPush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E47D8C2A0D37A100E0A496 /* CustomPush.swift */; };
 		30FFEC969D75D2D21D868EFA /* Pods_QuizZilla_QuizZillaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4D629FACCB7867295735072 /* Pods_QuizZilla_QuizZillaUITests.framework */; };
 		37B6BB651AC9154BC0504F7B /* Pods_QuizZilla.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2D8FB92DE33F3109FA11BF /* Pods_QuizZilla.framework */; };
 		7C2FD2648F3C97DA775BE284 /* Pods_QuizZillaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A322CCD1B5FCDE5212BE627 /* Pods_QuizZillaTests.framework */; };
@@ -83,6 +88,11 @@
 		18A461862A0A7B9C0085BD81 /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
 		18E47D7B2A0BB06800E0A496 /* xMark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xMark.json; sourceTree = "<group>"; };
 		18E47D7D2A0BB56800E0A496 /* TickMark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TickMark.json; sourceTree = "<group>"; };
+		18E47D812A0CEDD300E0A496 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		18E47D822A0CEDD300E0A496 /* ResultViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
+		18E47D872A0CF5AF00E0A496 /* tryAgain.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tryAgain.json; sourceTree = "<group>"; };
+		18E47D892A0CF94800E0A496 /* Celebration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Celebration.json; sourceTree = "<group>"; };
+		18E47D8C2A0D37A100E0A496 /* CustomPush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPush.swift; sourceTree = "<group>"; };
 		1A2D8FB92DE33F3109FA11BF /* Pods_QuizZilla.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizZilla.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BE75AB6A07C7E1FA96A2555 /* Pods-QuizZillaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizZillaTests.release.xcconfig"; path = "Target Support Files/Pods-QuizZillaTests/Pods-QuizZillaTests.release.xcconfig"; sourceTree = "<group>"; };
 		6A322CCD1B5FCDE5212BE627 /* Pods_QuizZillaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuizZillaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -276,6 +286,7 @@
 		18A4617A2A0A61640085BD81 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				18E47D8B2A0D378C00E0A496 /* CustomPush */,
 				18A4617C2A0A61910085BD81 /* Extensions.swift */,
 				18A461842A0A79D80085BD81 /* NetworkManager.swift */,
 			);
@@ -285,6 +296,7 @@
 		18A4617B2A0A61700085BD81 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				18E47D7F2A0CED9E00E0A496 /* ResultModule */,
 				185072C82A0A2B060027A10F /* QuestionsModule */,
 				185072BB2A0A136C0027A10F /* Home Module */,
 			);
@@ -303,10 +315,37 @@
 		18E47D782A0BAD1600E0A496 /* LottieAnimations */ = {
 			isa = PBXGroup;
 			children = (
+				18E47D892A0CF94800E0A496 /* Celebration.json */,
+				18E47D872A0CF5AF00E0A496 /* tryAgain.json */,
 				18E47D7B2A0BB06800E0A496 /* xMark.json */,
 				18E47D7D2A0BB56800E0A496 /* TickMark.json */,
 			);
 			path = LottieAnimations;
+			sourceTree = "<group>";
+		};
+		18E47D7F2A0CED9E00E0A496 /* ResultModule */ = {
+			isa = PBXGroup;
+			children = (
+				18E47D802A0CEDB600E0A496 /* View */,
+			);
+			path = ResultModule;
+			sourceTree = "<group>";
+		};
+		18E47D802A0CEDB600E0A496 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18E47D812A0CEDD300E0A496 /* ResultViewController.swift */,
+				18E47D822A0CEDD300E0A496 /* ResultViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18E47D8B2A0D378C00E0A496 /* CustomPush */ = {
+			isa = PBXGroup;
+			children = (
+				18E47D8C2A0D37A100E0A496 /* CustomPush.swift */,
+			);
+			path = CustomPush;
 			sourceTree = "<group>";
 		};
 		61BFF096494CB196F5498B49 /* Pods */ = {
@@ -441,12 +480,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E47D882A0CF5AF00E0A496 /* tryAgain.json in Resources */,
 				18E47D7E2A0BB56800E0A496 /* TickMark.json in Resources */,
 				185DCCA72A0A2C61000B2DBB /* QuestionsViewController.xib in Resources */,
 				185072C72A0A1D5F0027A10F /* HomeCollectionViewCell.xib in Resources */,
+				18E47D842A0CEDD300E0A496 /* ResultViewController.xib in Resources */,
 				185072972A0A13550027A10F /* LaunchScreen.storyboard in Resources */,
 				185072942A0A13550027A10F /* Assets.xcassets in Resources */,
 				1850728F2A0A13530027A10F /* Main.storyboard in Resources */,
+				18E47D8A2A0CF94800E0A496 /* Celebration.json in Resources */,
 				18A461792A0A57EA0085BD81 /* QuestionsCollectionViewCell.xib in Resources */,
 				185072C22A0A13B40027A10F /* HomeViewController.xib in Resources */,
 				18E47D7C2A0BB06800E0A496 /* xMark.json in Resources */,
@@ -577,9 +619,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E47D832A0CEDD300E0A496 /* ResultViewController.swift in Sources */,
 				185072C12A0A13B40027A10F /* HomeViewController.swift in Sources */,
 				18A4617D2A0A61910085BD81 /* Extensions.swift in Sources */,
 				185DCCA62A0A2C61000B2DBB /* QuestionsViewController.swift in Sources */,
+				18E47D8D2A0D37A100E0A496 /* CustomPush.swift in Sources */,
 				18A461852A0A79D80085BD81 /* NetworkManager.swift in Sources */,
 				18A461872A0A7B9C0085BD81 /* QuestionsViewModel.swift in Sources */,
 				18A4617F2A0A73A70085BD81 /* Trivia Model.swift in Sources */,

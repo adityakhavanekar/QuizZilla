@@ -85,6 +85,19 @@ extension QuestionsViewController: UICollectionViewDelegate,UICollectionViewData
         return 0
     }
     
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+            let collectionViewCenter = view.bounds.width / 2 + questionsCollectionView.contentInset.left
+            for cell in questionsCollectionView.visibleCells {
+                let cellCenter = questionsCollectionView.convert(cell.center, to: view)
+                let distanceFromCenter = abs(collectionViewCenter - cellCenter.x)
+                let maxDistance = view.bounds.width
+                let scaleFactor = 1 - distanceFromCenter / maxDistance
+                let alphaFactor = 1 - distanceFromCenter / (maxDistance * 0.5)
+                let transform = CGAffineTransform(scaleX: scaleFactor, y: scaleFactor)
+                cell.transform = transform
+                cell.alpha = alphaFactor
+            }
+        }
     
 }
 
@@ -102,11 +115,25 @@ extension QuestionsViewController: MyCollectionViewCellDelegate{
                     self.questionsCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
                 }
             }else{
-                print("Last Item")
+                let vc = ResultViewController()
+                if let count = viewModel?.getQuestionsCount(){
+                    let percentage = calculatePercentage(marksObtained: Double(self.points), totalMarks: Double(count))
+                    if percentage >= 50{
+                        vc.configure(percentage: "\(percentage)% Score", congoString: "Congrats", colorHexCode: "#3CB572", animationString: "Celebration")
+                    }else if percentage < 50{
+                        vc.configure(percentage: "\(percentage)% Score", congoString: "Try Again", colorHexCode: "#FF5252", animationString: "tryAgain")
+                    }
+                }
+                self.navigationController?.pushViewController(vc, animated: true)
             }
         }
         
     }
+    func calculatePercentage(marksObtained: Double, totalMarks: Double) -> Int {
+        let marks = Int((marksObtained / totalMarks) * 100.0)
+        return marks
+    }
+
 }
 
 extension QuestionsViewController{
