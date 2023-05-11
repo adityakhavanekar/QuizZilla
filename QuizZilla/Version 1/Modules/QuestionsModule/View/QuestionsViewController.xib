@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nXn-vA-cpK">
-                    <rect key="frame" x="0.0" y="67" width="390" height="40"/>
+                    <rect key="frame" x="0.0" y="57" width="390" height="40"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQC-1M-hb3">
                             <rect key="frame" x="20" y="0.0" width="30" height="40"/>
@@ -79,7 +79,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="daF-YP-fnS">
-                    <rect key="frame" x="0.0" y="107" width="390" height="703"/>
+                    <rect key="frame" x="0.0" y="97" width="390" height="713"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WsM-cQ-LAG">
                         <size key="itemSize" width="128" height="128"/>
@@ -93,7 +93,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="daF-YP-fnS" firstAttribute="top" secondItem="nXn-vA-cpK" secondAttribute="bottom" id="7R5-Ij-FtS"/>
-                <constraint firstItem="nXn-vA-cpK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="9HT-Px-xcq"/>
+                <constraint firstItem="nXn-vA-cpK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="9HT-Px-xcq"/>
                 <constraint firstItem="nXn-vA-cpK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Cc0-zU-Qww"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="daF-YP-fnS" secondAttribute="bottom" id="R5J-vn-g4D"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="daF-YP-fnS" secondAttribute="trailing" id="TAT-W0-z5c"/>
