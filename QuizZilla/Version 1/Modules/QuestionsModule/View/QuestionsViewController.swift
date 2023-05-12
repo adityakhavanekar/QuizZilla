@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class QuestionsViewController: UIViewController {
     
@@ -68,6 +69,7 @@ extension QuestionsViewController: UICollectionViewDelegate,UICollectionViewData
             cell.option2Btn.setTitle(model[1], for: .normal)
             cell.option3Btn.setTitle(model[2], for: .normal)
             cell.option4Btn.setTitle(model[3], for: .normal)
+            cell.supportImgView.sd_setImage(with: URL(string: object.imageURL ?? ""))
             cell.delegate = self
         }
         return cell

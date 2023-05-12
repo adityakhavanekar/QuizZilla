@@ -18,3 +18,17 @@ struct Trivia: Codable {
         case ca = "CA"
     }
 }
+
+struct TriviaElement: Codable {
+    let id, question: String
+    let options: [String]
+    let ca: String
+    let imageURL: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case question, options
+        case ca = "CA"
+        case imageURL = "imageUrl"
+    }
+}

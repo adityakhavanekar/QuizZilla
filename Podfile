@@ -7,6 +7,7 @@ target 'QuizZilla' do
 
   # Pods for QuizZilla
   pod 'lottie-ios'
+  pod 'SDWebImage'
 
   target 'QuizZillaTests' do
     inherit! :search_paths

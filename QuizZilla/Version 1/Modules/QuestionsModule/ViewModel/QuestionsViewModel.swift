@@ -10,7 +10,7 @@ import Foundation
 class QuestionsViewModel{
     
     private var url:URL
-    private var questions:[Trivia]?
+    private var questions:[TriviaElement]?
     
     init(url: URL) {
         self.url = url
@@ -21,7 +21,7 @@ class QuestionsViewModel{
             switch data{
             case .success(let gotData):
                 do{
-                    let jsonData = try JSONDecoder().decode([Trivia].self, from: gotData)
+                    let jsonData = try JSONDecoder().decode([TriviaElement].self, from: gotData)
                     self.questions = jsonData.shuffled()
                     completion()
                 }catch{
@@ -37,7 +37,7 @@ class QuestionsViewModel{
         self.questions?.count
     }
     
-    func getQuestion(index:Int)->Trivia?{
+    func getQuestion(index:Int)->TriviaElement?{
         if let object = self.questions?[index]{
             return object
         }else{
