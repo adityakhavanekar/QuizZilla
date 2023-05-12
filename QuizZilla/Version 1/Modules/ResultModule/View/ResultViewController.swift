@@ -35,7 +35,9 @@ class ResultViewController: UIViewController {
         scorePercentLbl.textColor = UIColor(hex: scorePercentTextColor)
         congratsLbl.text = congratsStr
         if let animation = animationString{
-            setAnimationView(animationName: animation, speed: 1.5)
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.2){
+                self.setAnimationView(animationName: animation, speed: 1.5)
+            }
         }
     }
     
