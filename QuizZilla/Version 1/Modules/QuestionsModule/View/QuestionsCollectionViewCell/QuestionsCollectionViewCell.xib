@@ -16,15 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="367" height="806"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question 4" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgo-ft-1lM">
-                        <rect key="frame" x="20" y="100" width="327" height="23.333333333333329"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who won the Fifa World Cup 2022?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5g-9W-qVI">
-                        <rect key="frame" x="20" y="133.33333333333334" width="327" height="58.333333333333343"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who won the Fifa World Cup 2022?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="A5g-9W-qVI">
+                        <rect key="frame" x="20" y="40" width="327" height="58.333333333333343"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="25"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -124,6 +117,9 @@
                             <constraint firstAttribute="height" constant="130" id="d30-Au-2XB"/>
                         </constraints>
                     </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="america" translatesAutoresizingMaskIntoConstraints="NO" id="jhg-OZ-PdM">
+                        <rect key="frame" x="20" y="143.33333333333334" width="327" height="452.66666666666663"/>
+                    </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQW-s0-rDf">
                         <rect key="frame" x="83.666666666666686" y="303" width="200" height="200"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -133,30 +129,40 @@
                         </constraints>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tip" translatesAutoresizingMaskIntoConstraints="NO" id="Z9A-Pe-v7G">
-                        <rect key="frame" x="322" y="67" width="25" height="25"/>
+                        <rect key="frame" x="322" y="103.33333333333333" width="25" height="24.999999999999986"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="25" id="YLO-Bw-Qce"/>
-                            <constraint firstAttribute="height" constant="25" id="vNA-J9-8Hk"/>
+                            <constraint firstAttribute="height" constant="25" id="G6z-lF-Yrv"/>
+                            <constraint firstAttribute="width" constant="25" id="mJA-AF-hTA"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CS7-XI-roW">
+                        <rect key="frame" x="20" y="15" width="327" height="20"/>
+                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="A5g-9W-qVI" firstAttribute="top" secondItem="Hgo-ft-1lM" secondAttribute="bottom" constant="10" id="4Qc-gg-DDj"/>
-                <constraint firstItem="Hgo-ft-1lM" firstAttribute="top" secondItem="Z9A-Pe-v7G" secondAttribute="bottom" constant="8" symbolic="YES" id="AoS-nm-IfP"/>
+                <constraint firstItem="jhg-OZ-PdM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="0Yk-yz-ce0"/>
+                <constraint firstItem="Q01-1N-n0I" firstAttribute="top" secondItem="jhg-OZ-PdM" secondAttribute="bottom" constant="30" id="38c-pg-X18"/>
+                <constraint firstItem="CS7-XI-roW" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="3wm-fh-QUr"/>
+                <constraint firstItem="CS7-XI-roW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="Ggj-jc-AmR"/>
                 <constraint firstItem="GQW-s0-rDf" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="J4c-GS-K07"/>
+                <constraint firstAttribute="trailing" secondItem="Z9A-Pe-v7G" secondAttribute="trailing" constant="20" id="Jwm-lz-jSn"/>
                 <constraint firstItem="Q01-1N-n0I" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="QJ3-X2-Ekq"/>
                 <constraint firstAttribute="bottom" secondItem="Q01-1N-n0I" secondAttribute="bottom" constant="50" id="R1t-XA-xwN"/>
+                <constraint firstAttribute="trailing" secondItem="CS7-XI-roW" secondAttribute="trailing" constant="20" id="Rja-4l-Z9Q"/>
+                <constraint firstAttribute="trailing" secondItem="jhg-OZ-PdM" secondAttribute="trailing" constant="20" id="Rnt-4e-Wht"/>
                 <constraint firstItem="GQW-s0-rDf" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="SkS-h3-kQh"/>
-                <constraint firstItem="Hgo-ft-1lM" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="XhP-no-Ktv"/>
-                <constraint firstAttribute="trailing" secondItem="Z9A-Pe-v7G" secondAttribute="trailing" constant="20" id="elm-BL-i6W"/>
-                <constraint firstItem="Hgo-ft-1lM" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="100" id="ghl-ta-vnW"/>
+                <constraint firstItem="Z9A-Pe-v7G" firstAttribute="top" secondItem="A5g-9W-qVI" secondAttribute="bottom" constant="5" id="UBB-fU-TQ9"/>
                 <constraint firstItem="A5g-9W-qVI" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="gvW-ai-01h"/>
+                <constraint firstItem="A5g-9W-qVI" firstAttribute="top" secondItem="CS7-XI-roW" secondAttribute="bottom" constant="5" id="icU-MS-o5F"/>
                 <constraint firstAttribute="trailing" secondItem="A5g-9W-qVI" secondAttribute="trailing" constant="20" id="p6z-BC-4c1"/>
                 <constraint firstAttribute="trailing" secondItem="Q01-1N-n0I" secondAttribute="trailing" constant="20" id="vci-2U-Oye"/>
-                <constraint firstAttribute="trailing" secondItem="Hgo-ft-1lM" secondAttribute="trailing" constant="20" id="wm8-cG-9PR"/>
+                <constraint firstItem="jhg-OZ-PdM" firstAttribute="top" secondItem="Z9A-Pe-v7G" secondAttribute="bottom" constant="15" id="wKV-ys-Hay"/>
             </constraints>
             <size key="customSize" width="367" height="806"/>
             <connections>
@@ -167,12 +173,14 @@
                 <outlet property="option3Btn" destination="CB9-EL-cJA" id="qem-e1-KK0"/>
                 <outlet property="option4Btn" destination="XZD-IO-rAo" id="jpw-3V-YX7"/>
                 <outlet property="questionLbl" destination="A5g-9W-qVI" id="hyH-sY-zrN"/>
-                <outlet property="questionNumberLbl" destination="Hgo-ft-1lM" id="EbI-y2-Ggd"/>
+                <outlet property="questionNumberLbl" destination="CS7-XI-roW" id="5Vj-Ow-cgZ"/>
+                <outlet property="supportImgView" destination="jhg-OZ-PdM" id="9oB-Z2-Hnd"/>
             </connections>
             <point key="canvasLocation" x="63.846153846153847" y="305.68720379146919"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="america" width="976" height="645"/>
         <image name="tip" width="512" height="512"/>
     </resources>
 </document>

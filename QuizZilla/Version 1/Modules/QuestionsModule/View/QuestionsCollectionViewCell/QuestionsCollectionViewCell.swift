@@ -14,6 +14,7 @@ protocol MyCollectionViewCellDelegate: AnyObject {
 
 class QuestionsCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var supportImgView: UIImageView!
     @IBOutlet weak var hintImgView: UIImageView!
     @IBOutlet weak var animationContView: UIView!
     
@@ -47,7 +48,7 @@ class QuestionsCollectionViewCell: UICollectionViewCell {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
         hintImgView.addGestureRecognizer(tapGesture)
         hintImgView.image = UIImage(named: "tip")
-        
+        supportImgView.layer.cornerRadius = 20
         DispatchQueue.main.asyncAfter(deadline: .now()+0.6){
             self.isUserInteractionEnabled = true
         }
