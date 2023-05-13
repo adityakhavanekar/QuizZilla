@@ -76,19 +76,19 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         switch indexPath.row{
         case 0:
             vc.categoryStr = "History"
-            vc.viewModel = QuestionsViewModel(url: URL(string: "http://localhost:3000/historyQuestions")!)
+            vc.viewModel = QuestionsViewModel(url: URL(string: "http://207.154.204.149:3050/historyQuestions")!)
         case 1:
             vc.categoryStr = "Sports"
-            vc.viewModel = QuestionsViewModel(url: URL(string: "http://localhost:3000/sportQuestions")!)
+            vc.viewModel = QuestionsViewModel(url: URL(string: "http://207.154.204.149:3050/sportQuestions")!)
         case 2:
             vc.categoryStr = "Science"
-            vc.viewModel = QuestionsViewModel(url: URL(string: "http://localhost:3000/scienceQuestions")!)
+            vc.viewModel = QuestionsViewModel(url: URL(string: "http://207.154.204.149:3050/scienceQuestions")!)
         case 3:
             vc.categoryStr = "Music"
-            vc.viewModel = QuestionsViewModel(url: URL(string: "http://localhost:3000/musicQuestions")!)
+            vc.viewModel = QuestionsViewModel(url: URL(string: "http://207.154.204.149:3050/musicQuestions")!)
         case 4:
             vc.categoryStr = "Movies"
-            vc.viewModel = QuestionsViewModel(url: URL(string: "http://localhost:3000/movieQuestions")!)
+            vc.viewModel = QuestionsViewModel(url: URL(string: "http://207.154.204.149:3050/movieQuestions")!)
         default:
             print("")
         }
