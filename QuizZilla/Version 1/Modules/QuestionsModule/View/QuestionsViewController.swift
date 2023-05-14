@@ -44,6 +44,7 @@ class QuestionsViewController: UIViewController {
                 self.questionsCollectionView.reloadData()
             }
         }
+        backBtn.setTitle("", for: .normal)
     }
     
     @IBAction func backBtnClicked(_ sender: Any) {
