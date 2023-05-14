@@ -133,6 +133,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181CB2042A1114A7007C4815 /* SystemFiles */ = {
+			isa = PBXGroup;
+			children = (
+				185072872A0A13530027A10F /* AppDelegate.swift */,
+				185072892A0A13530027A10F /* SceneDelegate.swift */,
+				1850728B2A0A13530027A10F /* ViewController.swift */,
+				1850728D2A0A13530027A10F /* Main.storyboard */,
+			);
+			path = SystemFiles;
+			sourceTree = "<group>";
+		};
 		1850727B2A0A13530027A10F = {
 			isa = PBXGroup;
 			children = (
@@ -158,11 +169,8 @@
 		185072862A0A13530027A10F /* QuizZilla */ = {
 			isa = PBXGroup;
 			children = (
+				181CB2042A1114A7007C4815 /* SystemFiles */,
 				185072BA2A0A135C0027A10F /* Version 1 */,
-				185072872A0A13530027A10F /* AppDelegate.swift */,
-				185072892A0A13530027A10F /* SceneDelegate.swift */,
-				1850728B2A0A13530027A10F /* ViewController.swift */,
-				1850728D2A0A13530027A10F /* Main.storyboard */,
 				18E47D762A0BACA300E0A496 /* Assets */,
 				185072952A0A13550027A10F /* LaunchScreen.storyboard */,
 				185072982A0A13550027A10F /* Info.plist */,
