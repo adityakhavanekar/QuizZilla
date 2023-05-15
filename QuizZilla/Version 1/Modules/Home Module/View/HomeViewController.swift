@@ -8,6 +8,8 @@
 import UIKit
 import GoogleMobileAds
 
+var didAnimate: Bool = false
+
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var menuImgView: UIImageView!
@@ -34,6 +36,9 @@ class HomeViewController: UIViewController {
         setupUI()
     }
     override func viewDidAppear(_ animated: Bool) {
+        if didAnimate == false{
+            self.animateCollection()
+        }
         self.homeCollectionView.isUserInteractionEnabled = true
     }
     
@@ -106,6 +111,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDataSourc
         default:
             print("")
         }
+        didAnimate = true
         self.homeCollectionView.isUserInteractionEnabled = false
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -128,4 +134,29 @@ extension HomeViewController:UINavigationControllerDelegate, UIViewControllerTra
             }
             return nil
         }
+}
+
+extension HomeViewController{
+    func animateCollection() {
+        homeCollectionView.isUserInteractionEnabled = false
+        let cells = homeCollectionView.visibleCells
+        let collectionViewWidth = homeCollectionView.bounds.size.width
+        
+        for (index, cell) in cells.enumerated() {
+            let translationX = index % 2 == 0 ? -collectionViewWidth : collectionViewWidth
+            cell.transform = CGAffineTransform(translationX: translationX, y: 0)
+            cell.alpha = 0
+        }
+        
+        var delayCounter = 0.0
+        for (index, cell) in cells.enumerated() {
+            UIView.animate(withDuration: 0.5, delay: delayCounter, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                cell.transform = CGAffineTransform.identity
+                cell.alpha = 1
+            }, completion: nil)
+            
+            delayCounter += 0.2
+        }
+        homeCollectionView.isUserInteractionEnabled = true
+    }
 }
