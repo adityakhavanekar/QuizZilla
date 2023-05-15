@@ -35,7 +35,7 @@ class QuestionsViewController: UIViewController {
         points = 0
         questionsCollectionView.delegate = self
         questionsCollectionView.dataSource = self
-        questionsCollectionView.register(UINib(nibName: "QuestionsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "QuestionsCollectionViewCell")
+        questionsCollectionView.register(UINib(nibName: "NewQuestionsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "NewQuestionsCollectionViewCell")
         questionsCollectionView.isScrollEnabled = false
         self.categoryLbl.text = categoryStr
         
@@ -59,18 +59,12 @@ extension QuestionsViewController: UICollectionViewDelegate,UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "QuestionsCollectionViewCell", for: indexPath) as? QuestionsCollectionViewCell else {return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewQuestionsCollectionViewCell", for: indexPath) as? NewQuestionsCollectionViewCell else {return UICollectionViewCell()}
         if let object = self.viewModel?.getQuestion(index: indexPath.row){
             var model = object.options
             model = model.shuffled()
-            cell.correctAns = object.ca
             cell.questionNumberLbl.text = "Question \(indexPath.row + 1)"
-            cell.questionLbl.text = object.question
-            cell.option1Btn.setTitle(model[0], for: .normal)
-            cell.option2Btn.setTitle(model[1], for: .normal)
-            cell.option3Btn.setTitle(model[2], for: .normal)
-            cell.option4Btn.setTitle(model[3], for: .normal)
-            cell.supportImgView.sd_setImage(with: URL(string: object.imageURL ?? ""))
+            cell.setupCell(element: object)
             cell.delegate = self
         }
         return cell
@@ -104,9 +98,22 @@ extension QuestionsViewController: UICollectionViewDelegate,UICollectionViewData
     
 }
 
-extension QuestionsViewController: MyCollectionViewCellDelegate{
+extension QuestionsViewController{
     
-    func didTapButtonInCell(_ cell: QuestionsCollectionViewCell,points:Int) {
+    func animateImageView(imageView: UIImageView) {
+        UIView.animate(withDuration: 0.2, animations: {
+            imageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+        }, completion: { finished in
+            UIView.animate(withDuration: 0.2, animations: {
+                imageView.transform = CGAffineTransform.identity
+            })
+        })
+    }
+    
+}
+
+extension QuestionsViewController:MyCollectionViewCellDelegateNew{
+    func didTapButtonInCell(_ cell: NewQuestionsCollectionViewCell, points: Int) {
         if points > 0{
             self.points = self.points+points
         }
@@ -136,19 +143,6 @@ extension QuestionsViewController: MyCollectionViewCellDelegate{
         let marks = Int((marksObtained / totalMarks) * 100.0)
         return marks
     }
-
-}
-
-extension QuestionsViewController{
     
-    func animateImageView(imageView: UIImageView) {
-        UIView.animate(withDuration: 0.2, animations: {
-            imageView.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        }, completion: { finished in
-            UIView.animate(withDuration: 0.2, animations: {
-                imageView.transform = CGAffineTransform.identity
-            })
-        })
-    }
     
 }
