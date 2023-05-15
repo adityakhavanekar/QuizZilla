@@ -94,7 +94,7 @@
                             <constraint firstAttribute="height" constant="130" id="d30-Au-2XB"/>
                         </constraints>
                     </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="america" translatesAutoresizingMaskIntoConstraints="NO" id="jhg-OZ-PdM">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="america" translatesAutoresizingMaskIntoConstraints="NO" id="jhg-OZ-PdM">
                         <rect key="frame" x="20" y="143.33333333333334" width="327" height="452.66666666666663"/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GQW-s0-rDf">

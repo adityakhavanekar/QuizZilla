@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class HomeViewController: UIViewController {
 
@@ -13,10 +14,23 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var userImgView: UIImageView!
     @IBOutlet weak var homeCollectionView: UICollectionView!
     @IBOutlet weak var questionLbl: UILabel!
+    @IBOutlet weak var adView: UIView!
     
+    private let banner:GADBannerView = {
+        let banner = GADBannerView()
+        banner.adUnitID = "ca-app-pub-8260816350989246/3781983591"
+        banner.load(GADRequest())
+        banner.backgroundColor = .red
+        return banner
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        banner.rootViewController = self
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.2){
+            self.banner.frame = self.adView.bounds
+            self.adView.addSubview(self.banner)
+        }
         setupUI()
     }
     override func viewDidAppear(_ animated: Bool) {

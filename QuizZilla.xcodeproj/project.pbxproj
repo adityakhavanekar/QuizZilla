@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181CB2492A123E09007C4815 /* NewQuestionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CB2472A123E09007C4815 /* NewQuestionsCollectionViewCell.swift */; };
+		181CB24A2A123E09007C4815 /* NewQuestionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181CB2482A123E09007C4815 /* NewQuestionsCollectionViewCell.xib */; };
+		181CB24D2A12447A007C4815 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 181CB24C2A12447A007C4815 /* GoogleMobileAds */; };
 		185072882A0A13530027A10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185072872A0A13530027A10F /* AppDelegate.swift */; };
 		1850728A2A0A13530027A10F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185072892A0A13530027A10F /* SceneDelegate.swift */; };
 		1850728C2A0A13530027A10F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850728B2A0A13530027A10F /* ViewController.swift */; };
@@ -61,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		022055024D2CDA99E1A2A5DF /* Pods-QuizZilla-QuizZillaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuizZilla-QuizZillaUITests.release.xcconfig"; path = "Target Support Files/Pods-QuizZilla-QuizZillaUITests/Pods-QuizZilla-QuizZillaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		181CB2472A123E09007C4815 /* NewQuestionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQuestionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		181CB2482A123E09007C4815 /* NewQuestionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewQuestionsCollectionViewCell.xib; sourceTree = "<group>"; };
 		185072842A0A13530027A10F /* QuizZilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizZilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185072872A0A13530027A10F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185072892A0A13530027A10F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181CB24D2A12447A007C4815 /* GoogleMobileAds in Frameworks */,
 				37B6BB651AC9154BC0504F7B /* Pods_QuizZilla.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +148,15 @@
 				1850728D2A0A13530027A10F /* Main.storyboard */,
 			);
 			path = SystemFiles;
+			sourceTree = "<group>";
+		};
+		181CB2462A123D74007C4815 /* NewQuestionsCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				181CB2472A123E09007C4815 /* NewQuestionsCollectionViewCell.swift */,
+				181CB2482A123E09007C4815 /* NewQuestionsCollectionViewCell.xib */,
+			);
+			path = NewQuestionsCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		1850727B2A0A13530027A10F = {
@@ -261,6 +276,7 @@
 		185072CD2A0A2B2B0027A10F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				181CB2462A123D74007C4815 /* NewQuestionsCollectionViewCell */,
 				18A461712A0A52FB0085BD81 /* QuestionsCollectionViewCell */,
 				185DCCA42A0A2C61000B2DBB /* QuestionsViewController.swift */,
 				185DCCA52A0A2C61000B2DBB /* QuestionsViewController.xib */,
@@ -400,6 +416,9 @@
 			dependencies = (
 			);
 			name = QuizZilla;
+			packageProductDependencies = (
+				181CB24C2A12447A007C4815 /* GoogleMobileAds */,
+			);
 			productName = QuizZilla;
 			productReference = 185072842A0A13530027A10F /* QuizZilla.app */;
 			productType = "com.apple.product-type.application";
@@ -475,6 +494,9 @@
 				Base,
 			);
 			mainGroup = 1850727B2A0A13530027A10F;
+			packageReferences = (
+				181CB24B2A12447A007C4815 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = 185072852A0A13530027A10F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -498,6 +520,7 @@
 				18E47D842A0CEDD300E0A496 /* ResultViewController.xib in Resources */,
 				185072972A0A13550027A10F /* LaunchScreen.storyboard in Resources */,
 				185072942A0A13550027A10F /* Assets.xcassets in Resources */,
+				181CB24A2A123E09007C4815 /* NewQuestionsCollectionViewCell.xib in Resources */,
 				1850728F2A0A13530027A10F /* Main.storyboard in Resources */,
 				18E47D8F2A0E1B9100E0A496 /* celebration2.json in Resources */,
 				18E47D8A2A0CF94800E0A496 /* Celebration.json in Resources */,
@@ -642,6 +665,7 @@
 				18A461782A0A57EA0085BD81 /* QuestionsCollectionViewCell.swift in Sources */,
 				1850728C2A0A13530027A10F /* ViewController.swift in Sources */,
 				185072882A0A13530027A10F /* AppDelegate.swift in Sources */,
+				181CB2492A123E09007C4815 /* NewQuestionsCollectionViewCell.swift in Sources */,
 				1850728A2A0A13530027A10F /* SceneDelegate.swift in Sources */,
 				185072922A0A13530027A10F /* QuizZilla.xcdatamodeld in Sources */,
 				185072C62A0A1D5F0027A10F /* HomeCollectionViewCell.swift in Sources */,
@@ -836,7 +860,23 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Neosoft.QuizZilla;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"Lottie\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AKApps.QuizZilla;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -866,7 +906,23 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Neosoft.QuizZilla;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"Lottie\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"UIKit\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AKApps.QuizZilla;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -994,6 +1050,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		181CB24B2A12447A007C4815 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		181CB24C2A12447A007C4815 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 181CB24B2A12447A007C4815 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		185072902A0A13530027A10F /* QuizZilla.xcdatamodeld */ = {

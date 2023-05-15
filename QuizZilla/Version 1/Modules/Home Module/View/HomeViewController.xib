@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="QuizZilla" customModuleProvider="target">
             <connections>
+                <outlet property="adView" destination="iGg-xz-uN9" id="h82-4z-dQj"/>
                 <outlet property="homeCollectionView" destination="jDO-re-aI2" id="fie-uT-NzD"/>
                 <outlet property="menuImgView" destination="90f-s5-eE7" id="KoP-Fp-c2Y"/>
                 <outlet property="questionLbl" destination="ett-iv-qYX" id="g7p-ri-3iV"/>
@@ -60,7 +61,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey, What subject you want to play today?" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ett-iv-qYX">
-                    <rect key="frame" x="20" y="137" width="350" height="46.666666666666657"/>
+                    <rect key="frame" x="20" y="122.00000000000001" width="350" height="46.666666666666671"/>
                     <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -69,7 +70,7 @@
                     </variation>
                 </label>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jDO-re-aI2">
-                    <rect key="frame" x="20" y="213.66666666666669" width="350" height="596.33333333333326"/>
+                    <rect key="frame" x="20" y="198.66666666666669" width="350" height="571.33333333333326"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="h9F-z4-Bda">
                         <size key="itemSize" width="128" height="128"/>
@@ -78,22 +79,30 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGg-xz-uN9">
+                    <rect key="frame" x="20" y="773" width="350" height="37"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="iGg-xz-uN9" firstAttribute="top" secondItem="jDO-re-aI2" secondAttribute="bottom" constant="3" id="3EA-OJ-MPs"/>
                 <constraint firstItem="0Jf-sX-Krk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="5xR-KT-DT6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jDO-re-aI2" secondAttribute="trailing" constant="20" id="7As-Re-Dz5"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jDO-re-aI2" secondAttribute="bottom" id="LK4-Gr-cO4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jDO-re-aI2" secondAttribute="bottom" constant="40" id="LK4-Gr-cO4"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0Jf-sX-Krk" secondAttribute="trailing" id="Nv8-hz-vu4"/>
                 <constraint firstItem="jDO-re-aI2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="WdP-Kx-dAP"/>
+                <constraint firstItem="iGg-xz-uN9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ZcX-1s-6ao"/>
                 <constraint firstItem="0Jf-sX-Krk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="a6C-8a-x7g"/>
                 <constraint firstItem="jDO-re-aI2" firstAttribute="top" secondItem="ett-iv-qYX" secondAttribute="bottom" constant="30" id="blN-Mj-MAy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iGg-xz-uN9" secondAttribute="trailing" constant="20" id="cry-L8-9Un"/>
                 <constraint firstItem="ett-iv-qYX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="imo-Ww-wBn"/>
-                <constraint firstItem="ett-iv-qYX" firstAttribute="top" secondItem="0Jf-sX-Krk" secondAttribute="bottom" constant="30" id="lsU-iS-zXg"/>
+                <constraint firstItem="ett-iv-qYX" firstAttribute="top" secondItem="0Jf-sX-Krk" secondAttribute="bottom" constant="15" id="lsU-iS-zXg"/>
+                <constraint firstItem="iGg-xz-uN9" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="pc5-fi-rsC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ett-iv-qYX" secondAttribute="trailing" constant="20" id="s4y-ry-LkL"/>
             </constraints>
-            <point key="canvasLocation" x="103" y="21"/>
+            <point key="canvasLocation" x="101.53846153846153" y="20.616113744075829"/>
         </view>
     </objects>
     <resources>
