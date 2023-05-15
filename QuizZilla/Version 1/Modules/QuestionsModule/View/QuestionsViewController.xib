@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionsViewController" customModule="QuizZilla" customModuleProvider="target">
             <connections>
+                <outlet property="adView" destination="oGk-EM-Ayp" id="trs-9w-8ec"/>
                 <outlet property="backBtn" destination="RQC-1M-hb3" id="QN4-cs-WWg"/>
                 <outlet property="categoryLbl" destination="UtN-Hy-abC" id="SdU-vi-t0P"/>
                 <outlet property="pointImgView" destination="z6J-04-qK4" id="FdS-RE-QKc"/>
@@ -76,7 +79,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="daF-YP-fnS">
-                    <rect key="frame" x="0.0" y="97" width="390" height="713"/>
+                    <rect key="frame" x="0.0" y="97" width="390" height="673"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WsM-cQ-LAG">
                         <size key="itemSize" width="128" height="128"/>
@@ -85,6 +88,10 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oGk-EM-Ayp">
+                    <rect key="frame" x="0.0" y="770" width="390" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -92,16 +99,23 @@
                 <constraint firstItem="daF-YP-fnS" firstAttribute="top" secondItem="nXn-vA-cpK" secondAttribute="bottom" id="7R5-Ij-FtS"/>
                 <constraint firstItem="nXn-vA-cpK" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="9HT-Px-xcq"/>
                 <constraint firstItem="nXn-vA-cpK" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Cc0-zU-Qww"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="daF-YP-fnS" secondAttribute="bottom" id="R5J-vn-g4D"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="daF-YP-fnS" secondAttribute="bottom" constant="40" id="R5J-vn-g4D"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="daF-YP-fnS" secondAttribute="trailing" id="TAT-W0-z5c"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nXn-vA-cpK" secondAttribute="trailing" id="Yxa-VZ-3bt"/>
+                <constraint firstItem="oGk-EM-Ayp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="du3-hM-WU9"/>
+                <constraint firstItem="oGk-EM-Ayp" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="e0r-uD-RSB"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oGk-EM-Ayp" secondAttribute="trailing" id="jyX-oT-WT3"/>
+                <constraint firstItem="oGk-EM-Ayp" firstAttribute="top" secondItem="daF-YP-fnS" secondAttribute="bottom" id="m8J-Pt-rk3"/>
                 <constraint firstItem="daF-YP-fnS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="rGY-UO-8e0"/>
             </constraints>
-            <point key="canvasLocation" x="8" y="21"/>
+            <point key="canvasLocation" x="7.6923076923076916" y="20.616113744075829"/>
         </view>
     </objects>
     <resources>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="point" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

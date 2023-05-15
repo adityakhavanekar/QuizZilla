@@ -7,9 +7,11 @@
 
 import UIKit
 import SDWebImage
+import GoogleMobileAds
 
 class QuestionsViewController: UIViewController {
     
+    @IBOutlet weak var adView: UIView!
     @IBOutlet weak var pointLbl: UILabel!
     @IBOutlet weak var pointImgView: UIImageView!
     @IBOutlet weak var categoryLbl: UILabel!
@@ -26,8 +28,21 @@ class QuestionsViewController: UIViewController {
         }
     }
     
+    private let banner:GADBannerView = {
+        let banner = GADBannerView()
+        banner.adUnitID = "ca-app-pub-8260816350989246/3781983591"
+        banner.load(GADRequest())
+        banner.backgroundColor = .red
+        return banner
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        banner.rootViewController = self
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.2){
+            self.banner.frame = self.adView.bounds
+            self.adView.addSubview(self.banner)
+        }
         setupUI()
     }
     
