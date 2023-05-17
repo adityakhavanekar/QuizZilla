@@ -12,6 +12,10 @@ protocol MyCollectionViewCellDelegateNew: AnyObject {
     func didTapButtonInCell(_ cell: NewQuestionsCollectionViewCell,points:Int)
 }
 
+protocol ShowAd:MyCollectionViewCellDelegateNew{
+    func showAd()
+}
+
 class NewQuestionsCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var questionNumberLbl: UILabel!
@@ -30,6 +34,7 @@ class NewQuestionsCollectionViewCell: UICollectionViewCell {
     
     var correctAns = ""
     var delegate:MyCollectionViewCellDelegateNew?
+    var adDelegate:ShowAd?
     var animationView: LottieAnimationView?
     
     override func awakeFromNib() {
@@ -76,6 +81,7 @@ class NewQuestionsCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func hintImageViewTapped() {
+        adDelegate?.showAd()
         print("Hint Tapped")
         makeBtnsDisable(buttons: [option1Btn,option2Btn,option3Btn,option4Btn])
         hintImageView.image = UIImage(named: "tipUsed")
