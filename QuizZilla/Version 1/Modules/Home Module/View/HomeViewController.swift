@@ -24,7 +24,7 @@ class HomeViewController: UIViewController {
 //TESTAD: ca-app-pub-3940256099942544/2934735716
         banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
         banner.load(GADRequest())
-        banner.backgroundColor = .red
+        banner.backgroundColor = .clear
         return banner
     }()
     
@@ -150,14 +150,14 @@ extension HomeViewController{
             cell.alpha = 0
         }
         
-        var delayCounter = 0.0
+        var delayCounter = 0.05
         for (index, cell) in cells.enumerated() {
-            UIView.animate(withDuration: 0.5, delay: delayCounter, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+            UIView.animate(withDuration: 0.3, delay: delayCounter, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 cell.transform = CGAffineTransform.identity
                 cell.alpha = 1
             }, completion: nil)
             
-            delayCounter += 0.2
+            delayCounter += 0.05
         }
         homeCollectionView.isUserInteractionEnabled = true
     }
