@@ -151,7 +151,7 @@ extension HomeViewController{
         }
         
         var delayCounter = 0.05
-        for (index, cell) in cells.enumerated() {
+        for (_, cell) in cells.enumerated() {
             UIView.animate(withDuration: 0.3, delay: delayCounter, usingSpringWithDamping: 0.9, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
                 cell.transform = CGAffineTransform.identity
                 cell.alpha = 1
