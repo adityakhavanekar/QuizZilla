@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCollectionViewCell" id="gTV-IL-0wX" customClass="CategoryCollectionViewCell" customModule="QuizZilla" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="211" height="235"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="211" height="235"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OyI-ny-6B4">
+                        <rect key="frame" x="5" y="5" width="201" height="225"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ID3-c1-Ipm">
+                                <rect key="frame" x="10" y="10" width="181" height="205"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="History" translatesAutoresizingMaskIntoConstraints="NO" id="nGb-a5-g52">
+                                        <rect key="frame" x="0.0" y="0.0" width="181" height="168.66666666666666"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fz4-vR-vTH">
+                                        <rect key="frame" x="0.0" y="178.66666666666666" width="181" height="26.333333333333343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="gKu-U2-R8b">
+                                                <rect key="frame" x="62" y="3.3333333333333428" width="57" height="20"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="17"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=regular">
+                                                    <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="35"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="gKu-U2-R8b" firstAttribute="centerY" secondItem="Fz4-vR-vTH" secondAttribute="centerY" id="2KS-zg-C10"/>
+                                            <constraint firstItem="gKu-U2-R8b" firstAttribute="centerX" secondItem="Fz4-vR-vTH" secondAttribute="centerX" id="cd8-Jo-FtM"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="ID3-c1-Ipm" secondAttribute="trailing" constant="10" id="Ixg-rN-Bmn"/>
+                            <constraint firstItem="ID3-c1-Ipm" firstAttribute="leading" secondItem="OyI-ny-6B4" secondAttribute="leading" constant="10" id="YpD-wd-ATo"/>
+                            <constraint firstItem="ID3-c1-Ipm" firstAttribute="top" secondItem="OyI-ny-6B4" secondAttribute="top" constant="10" id="hQa-XC-A7s"/>
+                            <constraint firstItem="nGb-a5-g52" firstAttribute="height" secondItem="OyI-ny-6B4" secondAttribute="height" multiplier="0.75" id="hex-Dm-kej"/>
+                            <constraint firstAttribute="bottom" secondItem="ID3-c1-Ipm" secondAttribute="bottom" constant="10" id="jEL-yk-tGi"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="OyI-ny-6B4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Kdg-Gj-hSa"/>
+                <constraint firstAttribute="trailing" secondItem="OyI-ny-6B4" secondAttribute="trailing" constant="5" id="Kha-nU-p1U"/>
+                <constraint firstAttribute="bottom" secondItem="OyI-ny-6B4" secondAttribute="bottom" constant="5" id="Rd5-Po-n1g"/>
+                <constraint firstItem="OyI-ny-6B4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="pkn-v7-ueA"/>
+            </constraints>
+            <size key="customSize" width="211" height="235"/>
+            <point key="canvasLocation" x="148.85496183206106" y="85.563380281690144"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="History" width="512" height="512"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
