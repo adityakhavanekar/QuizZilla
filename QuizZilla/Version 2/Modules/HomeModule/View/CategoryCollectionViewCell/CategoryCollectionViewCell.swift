@@ -24,7 +24,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         innerView.layer.shadowOpacity = 0.3
         innerView.layer.shadowRadius = 6
         innerView.layer.masksToBounds = false
-        innerView.layer.cornerRadius = 8
+        innerView.layer.cornerRadius = 15
     }
 
 }
