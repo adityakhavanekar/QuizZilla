@@ -35,17 +35,36 @@ class HomeViewControllerV2: UIViewController {
 
 extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
+        switch indexPath.item{
+        case 0:
+            cell.titleLbl.text = "History"
+            cell.imgView.image = UIImage(named: "History")
+        case 1:
+            cell.titleLbl.text = "Sports"
+            cell.imgView.image = UIImage(named: "Sports")
+        case 2:
+            cell.titleLbl.text = "Science"
+            cell.imgView.image = UIImage(named: "Science")
+        case 3:
+            cell.titleLbl.text = "Music"
+            cell.imgView.image = UIImage(named: "music")
+        case 4:
+            cell.titleLbl.text = "Movies"
+            cell.imgView.image = UIImage(named: "movies")
+        default:
+            print("")
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let colWidth = self.categoryCollectionView.frame.width
-        return CGSize(width: colWidth/2 - 15, height: colWidth/2 - 15)
+        return CGSize(width: colWidth/2 - 10, height: colWidth/2 - 15)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

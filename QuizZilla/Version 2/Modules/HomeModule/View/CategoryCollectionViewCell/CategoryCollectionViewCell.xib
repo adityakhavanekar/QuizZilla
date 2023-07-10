@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -51,7 +50,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="ID3-c1-Ipm" secondAttribute="trailing" constant="10" id="Ixg-rN-Bmn"/>
                             <constraint firstItem="ID3-c1-Ipm" firstAttribute="leading" secondItem="OyI-ny-6B4" secondAttribute="leading" constant="10" id="YpD-wd-ATo"/>
@@ -70,13 +69,15 @@
                 <constraint firstItem="OyI-ny-6B4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="pkn-v7-ueA"/>
             </constraints>
             <size key="customSize" width="211" height="235"/>
+            <connections>
+                <outlet property="imgView" destination="nGb-a5-g52" id="pac-Eg-kq1"/>
+                <outlet property="innerView" destination="OyI-ny-6B4" id="gd0-xU-RNA"/>
+                <outlet property="titleLbl" destination="gKu-U2-R8b" id="6aA-ar-WVY"/>
+            </connections>
             <point key="canvasLocation" x="148.85496183206106" y="85.563380281690144"/>
         </collectionViewCell>
     </objects>
     <resources>
         <image name="History" width="512" height="512"/>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
