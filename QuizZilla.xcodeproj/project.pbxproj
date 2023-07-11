@@ -38,6 +38,8 @@
 		18A461872A0A7B9C0085BD81 /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A461862A0A7B9C0085BD81 /* QuestionsViewModel.swift */; };
 		18D3BCDE2A5D388600E07DA7 /* QuestionsViewModelV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3BCDD2A5D388600E07DA7 /* QuestionsViewModelV2.swift */; };
 		18D3BCE72A5D3B0100E07DA7 /* TriviaModelV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3BCE62A5D3B0100E07DA7 /* TriviaModelV2.swift */; };
+		18D3BCEA2A5D3B4E00E07DA7 /* QuestionsViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3BCE82A5D3B4E00E07DA7 /* QuestionsViewControllerV2.swift */; };
+		18D3BCEB2A5D3B4E00E07DA7 /* QuestionsViewControllerV2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D3BCE92A5D3B4E00E07DA7 /* QuestionsViewControllerV2.xib */; };
 		18E47D7C2A0BB06800E0A496 /* xMark.json in Resources */ = {isa = PBXBuildFile; fileRef = 18E47D7B2A0BB06800E0A496 /* xMark.json */; };
 		18E47D7E2A0BB56800E0A496 /* TickMark.json in Resources */ = {isa = PBXBuildFile; fileRef = 18E47D7D2A0BB56800E0A496 /* TickMark.json */; };
 		18E47D832A0CEDD300E0A496 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E47D812A0CEDD300E0A496 /* ResultViewController.swift */; };
@@ -104,6 +106,8 @@
 		18A461862A0A7B9C0085BD81 /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
 		18D3BCDD2A5D388600E07DA7 /* QuestionsViewModelV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModelV2.swift; sourceTree = "<group>"; };
 		18D3BCE62A5D3B0100E07DA7 /* TriviaModelV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaModelV2.swift; sourceTree = "<group>"; };
+		18D3BCE82A5D3B4E00E07DA7 /* QuestionsViewControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewControllerV2.swift; sourceTree = "<group>"; };
+		18D3BCE92A5D3B4E00E07DA7 /* QuestionsViewControllerV2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionsViewControllerV2.xib; sourceTree = "<group>"; };
 		18E47D7B2A0BB06800E0A496 /* xMark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xMark.json; sourceTree = "<group>"; };
 		18E47D7D2A0BB56800E0A496 /* TickMark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TickMark.json; sourceTree = "<group>"; };
 		18E47D812A0CEDD300E0A496 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -415,6 +419,8 @@
 		18D3BCE12A5D397100E07DA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18D3BCE82A5D3B4E00E07DA7 /* QuestionsViewControllerV2.swift */,
+				18D3BCE92A5D3B4E00E07DA7 /* QuestionsViewControllerV2.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -625,6 +631,7 @@
 				185072C72A0A1D5F0027A10F /* HomeCollectionViewCell.xib in Resources */,
 				1823425E2A5B447C00429A2B /* CategoryCollectionViewCell.xib in Resources */,
 				18E47D842A0CEDD300E0A496 /* ResultViewController.xib in Resources */,
+				18D3BCEB2A5D3B4E00E07DA7 /* QuestionsViewControllerV2.xib in Resources */,
 				185072972A0A13550027A10F /* LaunchScreen.storyboard in Resources */,
 				185072942A0A13550027A10F /* Assets.xcassets in Resources */,
 				181CB24A2A123E09007C4815 /* NewQuestionsCollectionViewCell.xib in Resources */,
@@ -774,6 +781,7 @@
 				18A461872A0A7B9C0085BD81 /* QuestionsViewModel.swift in Sources */,
 				18A4617F2A0A73A70085BD81 /* Trivia Model.swift in Sources */,
 				18A461782A0A57EA0085BD81 /* QuestionsCollectionViewCell.swift in Sources */,
+				18D3BCEA2A5D3B4E00E07DA7 /* QuestionsViewControllerV2.swift in Sources */,
 				1850728C2A0A13530027A10F /* ViewController.swift in Sources */,
 				185072882A0A13530027A10F /* AppDelegate.swift in Sources */,
 				181CB2492A123E09007C4815 /* NewQuestionsCollectionViewCell.swift in Sources */,
