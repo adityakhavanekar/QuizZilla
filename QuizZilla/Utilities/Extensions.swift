@@ -43,3 +43,13 @@ extension UIView {
         layer.mask = mask
     }
 }
+
+extension UIButton {
+    func applyLiftedShadowEffect(cornerRadius:CGFloat) {
+        layer.cornerRadius = cornerRadius
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.2
+        layer.shadowOffset = CGSize(width: 0, height: 4)
+        layer.shadowRadius = 4
+    }
+}

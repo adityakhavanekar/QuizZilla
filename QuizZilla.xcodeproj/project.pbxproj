@@ -40,6 +40,8 @@
 		18D3BCE72A5D3B0100E07DA7 /* TriviaModelV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3BCE62A5D3B0100E07DA7 /* TriviaModelV2.swift */; };
 		18D3BCEA2A5D3B4E00E07DA7 /* QuestionsViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3BCE82A5D3B4E00E07DA7 /* QuestionsViewControllerV2.swift */; };
 		18D3BCEB2A5D3B4E00E07DA7 /* QuestionsViewControllerV2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D3BCE92A5D3B4E00E07DA7 /* QuestionsViewControllerV2.xib */; };
+		18D3BCEF2A5D43F900E07DA7 /* QuestionsCollectionViewCellV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D3BCED2A5D43F900E07DA7 /* QuestionsCollectionViewCellV2.swift */; };
+		18D3BCF02A5D43F900E07DA7 /* QuestionsCollectionViewCellV2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18D3BCEE2A5D43F900E07DA7 /* QuestionsCollectionViewCellV2.xib */; };
 		18E47D7C2A0BB06800E0A496 /* xMark.json in Resources */ = {isa = PBXBuildFile; fileRef = 18E47D7B2A0BB06800E0A496 /* xMark.json */; };
 		18E47D7E2A0BB56800E0A496 /* TickMark.json in Resources */ = {isa = PBXBuildFile; fileRef = 18E47D7D2A0BB56800E0A496 /* TickMark.json */; };
 		18E47D832A0CEDD300E0A496 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E47D812A0CEDD300E0A496 /* ResultViewController.swift */; };
@@ -108,6 +110,8 @@
 		18D3BCE62A5D3B0100E07DA7 /* TriviaModelV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriviaModelV2.swift; sourceTree = "<group>"; };
 		18D3BCE82A5D3B4E00E07DA7 /* QuestionsViewControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewControllerV2.swift; sourceTree = "<group>"; };
 		18D3BCE92A5D3B4E00E07DA7 /* QuestionsViewControllerV2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionsViewControllerV2.xib; sourceTree = "<group>"; };
+		18D3BCED2A5D43F900E07DA7 /* QuestionsCollectionViewCellV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsCollectionViewCellV2.swift; sourceTree = "<group>"; };
+		18D3BCEE2A5D43F900E07DA7 /* QuestionsCollectionViewCellV2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionsCollectionViewCellV2.xib; sourceTree = "<group>"; };
 		18E47D7B2A0BB06800E0A496 /* xMark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = xMark.json; sourceTree = "<group>"; };
 		18E47D7D2A0BB56800E0A496 /* TickMark.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TickMark.json; sourceTree = "<group>"; };
 		18E47D812A0CEDD300E0A496 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
@@ -419,6 +423,7 @@
 		18D3BCE12A5D397100E07DA7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				18D3BCEC2A5D43CE00E07DA7 /* QuestionsCollectionViewCellV2 */,
 				18D3BCE82A5D3B4E00E07DA7 /* QuestionsViewControllerV2.swift */,
 				18D3BCE92A5D3B4E00E07DA7 /* QuestionsViewControllerV2.xib */,
 			);
@@ -439,6 +444,15 @@
 				18D3BCE62A5D3B0100E07DA7 /* TriviaModelV2.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		18D3BCEC2A5D43CE00E07DA7 /* QuestionsCollectionViewCellV2 */ = {
+			isa = PBXGroup;
+			children = (
+				18D3BCED2A5D43F900E07DA7 /* QuestionsCollectionViewCellV2.swift */,
+				18D3BCEE2A5D43F900E07DA7 /* QuestionsCollectionViewCellV2.xib */,
+			);
+			path = QuestionsCollectionViewCellV2;
 			sourceTree = "<group>";
 		};
 		18E47D762A0BACA300E0A496 /* Assets */ = {
@@ -641,6 +655,7 @@
 				18A461792A0A57EA0085BD81 /* QuestionsCollectionViewCell.xib in Resources */,
 				185072C22A0A13B40027A10F /* HomeViewController.xib in Resources */,
 				182342512A5B36C000429A2B /* HomeViewControllerV2.xib in Resources */,
+				18D3BCF02A5D43F900E07DA7 /* QuestionsCollectionViewCellV2.xib in Resources */,
 				18E47D7C2A0BB06800E0A496 /* xMark.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -779,6 +794,7 @@
 				182342502A5B36C000429A2B /* HomeViewControllerV2.swift in Sources */,
 				18A461852A0A79D80085BD81 /* NetworkManager.swift in Sources */,
 				18A461872A0A7B9C0085BD81 /* QuestionsViewModel.swift in Sources */,
+				18D3BCEF2A5D43F900E07DA7 /* QuestionsCollectionViewCellV2.swift in Sources */,
 				18A4617F2A0A73A70085BD81 /* Trivia Model.swift in Sources */,
 				18A461782A0A57EA0085BD81 /* QuestionsCollectionViewCell.swift in Sources */,
 				18D3BCEA2A5D3B4E00E07DA7 /* QuestionsViewControllerV2.swift in Sources */,
