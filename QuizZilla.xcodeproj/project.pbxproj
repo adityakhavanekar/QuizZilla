@@ -14,6 +14,8 @@
 		182342512A5B36C000429A2B /* HomeViewControllerV2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1823424F2A5B36C000429A2B /* HomeViewControllerV2.xib */; };
 		1823425D2A5B447C00429A2B /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1823425B2A5B447C00429A2B /* CategoryCollectionViewCell.swift */; };
 		1823425E2A5B447C00429A2B /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1823425C2A5B447C00429A2B /* CategoryCollectionViewCell.xib */; };
+		1832D5372A5F3D8500973D5B /* ResultViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1832D5352A5F3D8500973D5B /* ResultViewControllerV2.swift */; };
+		1832D5382A5F3D8500973D5B /* ResultViewControllerV2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1832D5362A5F3D8500973D5B /* ResultViewControllerV2.xib */; };
 		185072882A0A13530027A10F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185072872A0A13530027A10F /* AppDelegate.swift */; };
 		1850728A2A0A13530027A10F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 185072892A0A13530027A10F /* SceneDelegate.swift */; };
 		1850728C2A0A13530027A10F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850728B2A0A13530027A10F /* ViewController.swift */; };
@@ -81,6 +83,8 @@
 		1823424F2A5B36C000429A2B /* HomeViewControllerV2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewControllerV2.xib; sourceTree = "<group>"; };
 		1823425B2A5B447C00429A2B /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		1823425C2A5B447C00429A2B /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		1832D5352A5F3D8500973D5B /* ResultViewControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewControllerV2.swift; sourceTree = "<group>"; };
+		1832D5362A5F3D8500973D5B /* ResultViewControllerV2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultViewControllerV2.xib; sourceTree = "<group>"; };
 		185072842A0A13530027A10F /* QuizZilla.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuizZilla.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		185072872A0A13530027A10F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		185072892A0A13530027A10F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 		182342442A5B35BB00429A2B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				1832D5332A5F3D4C00973D5B /* ResultModule */,
 				18D3BCE02A5D396900E07DA7 /* QuestionsModule */,
 				1823424A2A5B366B00429A2B /* HomeModule */,
 			);
@@ -239,6 +244,23 @@
 				1823425C2A5B447C00429A2B /* CategoryCollectionViewCell.xib */,
 			);
 			path = CategoryCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		1832D5332A5F3D4C00973D5B /* ResultModule */ = {
+			isa = PBXGroup;
+			children = (
+				1832D5342A5F3D5900973D5B /* View */,
+			);
+			path = ResultModule;
+			sourceTree = "<group>";
+		};
+		1832D5342A5F3D5900973D5B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1832D5352A5F3D8500973D5B /* ResultViewControllerV2.swift */,
+				1832D5362A5F3D8500973D5B /* ResultViewControllerV2.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1850727B2A0A13530027A10F = {
@@ -656,6 +678,7 @@
 				18E47D8F2A0E1B9100E0A496 /* celebration2.json in Resources */,
 				18E47D8A2A0CF94800E0A496 /* Celebration.json in Resources */,
 				18A461792A0A57EA0085BD81 /* QuestionsCollectionViewCell.xib in Resources */,
+				1832D5382A5F3D8500973D5B /* ResultViewControllerV2.xib in Resources */,
 				185072C22A0A13B40027A10F /* HomeViewController.xib in Resources */,
 				182342512A5B36C000429A2B /* HomeViewControllerV2.xib in Resources */,
 				18D3BCF02A5D43F900E07DA7 /* QuestionsCollectionViewCellV2.xib in Resources */,
@@ -796,6 +819,7 @@
 				18E47D8D2A0D37A100E0A496 /* CustomPush.swift in Sources */,
 				182342502A5B36C000429A2B /* HomeViewControllerV2.swift in Sources */,
 				18A461852A0A79D80085BD81 /* NetworkManager.swift in Sources */,
+				1832D5372A5F3D8500973D5B /* ResultViewControllerV2.swift in Sources */,
 				18A461872A0A7B9C0085BD81 /* QuestionsViewModel.swift in Sources */,
 				18D3BCF22A5EC82C00E07DA7 /* Enums.swift in Sources */,
 				18D3BCEF2A5D43F900E07DA7 /* QuestionsCollectionViewCellV2.swift in Sources */,

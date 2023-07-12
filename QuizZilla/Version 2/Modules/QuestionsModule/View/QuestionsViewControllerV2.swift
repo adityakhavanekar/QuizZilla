@@ -14,8 +14,8 @@ class QuestionsViewControllerV2: UIViewController {
     @IBOutlet weak var questionCollectionView: UICollectionView!
     @IBOutlet weak var backButton: UIButton!
     
-    var categoryStr: String = ""
     var viewModel:QuestionsViewModelV2?
+    var categoryStr: String = ""
     var scorePoints:Int = 0
     
     override func viewDidLoad() {
@@ -88,7 +88,7 @@ extension QuestionsViewControllerV2: QuestionsCollectionViewCellDelegateV2{
                     self.questionCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
                 }
             }else{
-                let vc = ResultViewController()
+                let vc = ResultViewControllerV2()
                 if let count = viewModel?.getQuestionsCount(){
                     let percentage = calculatePercentage(marksObtained: Double(self.scorePoints), totalMarks: Double(count))
                     if percentage >= 50{
