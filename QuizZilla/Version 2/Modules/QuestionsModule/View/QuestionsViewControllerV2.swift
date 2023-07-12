@@ -14,16 +14,23 @@ class QuestionsViewControllerV2: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    private func setupUI(){
+        navigationController?.navigationBar.isHidden = true
+        backButton.applyLiftedShadowEffect(cornerRadius: backButton.frame.height/2)
+        setupCollectionView()
+    }
+    
+    private func setupCollectionView(){
         questionCollectionView.register(UINib(nibName: "QuestionsCollectionViewCellV2", bundle: nil), forCellWithReuseIdentifier: "QuestionsCollectionViewCellV2")
         questionCollectionView.delegate = self
         questionCollectionView.dataSource = self
-        self.navigationController?.navigationBar.isHidden = true
-        backButton.applyLiftedShadowEffect(cornerRadius: backButton.frame.height/2)
-        
     }
     
     @IBAction func backBtnTapped(_ sender: UIButton) {
-        self.navigationController?.popViewController(animated: true)
+        navigationController?.popViewController(animated: true)
     }
 }
 

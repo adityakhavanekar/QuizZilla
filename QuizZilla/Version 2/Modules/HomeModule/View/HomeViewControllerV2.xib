@@ -58,10 +58,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2W-uL-hmc" userLabel="categoryView">
-                    <rect key="frame" x="0.0" y="200" width="393" height="588"/>
+                    <rect key="frame" x="0.0" y="200" width="393" height="568"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="tFu-29-NiS">
-                            <rect key="frame" x="10" y="50" width="373" height="533"/>
+                            <rect key="frame" x="15" y="50" width="363" height="513"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Cx-6B-5YE">
                                 <size key="itemSize" width="128" height="128"/>
@@ -73,17 +73,17 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="tFu-29-NiS" firstAttribute="leading" secondItem="s2W-uL-hmc" secondAttribute="leading" constant="10" id="8tA-VP-1tn"/>
+                        <constraint firstItem="tFu-29-NiS" firstAttribute="leading" secondItem="s2W-uL-hmc" secondAttribute="leading" constant="15" id="8tA-VP-1tn"/>
                         <constraint firstItem="tFu-29-NiS" firstAttribute="top" secondItem="s2W-uL-hmc" secondAttribute="top" constant="50" id="VSS-3V-SEC"/>
                         <constraint firstAttribute="bottom" secondItem="tFu-29-NiS" secondAttribute="bottom" constant="5" id="VeX-o8-ELr"/>
-                        <constraint firstAttribute="trailing" secondItem="tFu-29-NiS" secondAttribute="trailing" constant="10" id="jsB-fU-2cJ"/>
+                        <constraint firstAttribute="trailing" secondItem="tFu-29-NiS" secondAttribute="trailing" constant="15" id="jsB-fU-2cJ"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qF-i1-JrU" userLabel="adView">
-                    <rect key="frame" x="0.0" y="788" width="393" height="30"/>
+                    <rect key="frame" x="0.0" y="768" width="393" height="50"/>
                     <color key="backgroundColor" systemColor="systemGreenColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Avt-J1-3S3"/>
+                        <constraint firstAttribute="height" constant="50" id="Avt-J1-3S3"/>
                     </constraints>
                 </view>
             </subviews>
