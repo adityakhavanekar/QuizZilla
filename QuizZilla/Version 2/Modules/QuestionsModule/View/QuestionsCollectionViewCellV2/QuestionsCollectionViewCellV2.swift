@@ -12,6 +12,8 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     @IBOutlet weak var hintImgView: UIImageView!
     
+    @IBOutlet weak var questionView: UIView!
+    
     @IBOutlet weak var option4Btn: UIButton!
     @IBOutlet weak var option3Btn: UIButton!
     @IBOutlet weak var option2Btn: UIButton!
@@ -32,14 +34,19 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     @IBOutlet weak var option3TitleLbl: UILabel!
     @IBOutlet weak var option4TitleLbl: UILabel!
     
+    @IBOutlet weak var questionTitleLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
     }
     
     private func setupUI(){
-        hintImgView.layer.cornerRadius = 20
-        hintImgView.applyBlurEffect(context: CIContext(options: nil))
+        questionView.layer.cornerRadius = 20
+        questionView.layer.masksToBounds = true
+        
+        hintImgView.applyBlurEffect()
+        hintImgView.alpha = 0.65
         
         option1View.layer.cornerRadius = 20
         option1View.layer.masksToBounds = true
@@ -64,16 +71,6 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
             self.option3AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
             self.option4AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
         }
-        
-        option1Btn.setTitle("Ronaldo", for: .normal)
-        option2Btn.setTitle("Messi", for: .normal)
-        option3Btn.setTitle("Neymar", for: .normal)
-        option4Btn.setTitle("Mbappe", for: .normal)
-        
-        option1Btn.tintColor = .clear
-        option2Btn.tintColor = .clear
-        option3Btn.tintColor = .clear
-        option4Btn.tintColor = .clear
     }
     
     

@@ -77,6 +77,20 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = QuestionsViewControllerV2()
+//        switch indexPath.row{
+//        case 0:
+//            vc.viewModel = QuestionsViewModelV2(url: URL(string: "http://207.154.204.149:3050/historyQuestions")!)
+//        case 1:
+//            vc.viewModel = QuestionsViewModelV2(url: URL(string: "http://207.154.204.149:3050/sportQuestions")!)
+//        case 2:
+//            vc.viewModel = QuestionsViewModelV2(url: URL(string: "http://207.154.204.149:3050/scienceQuestions")!)
+//        case 3:
+//            vc.viewModel = QuestionsViewModelV2(url: URL(string: "http://207.154.204.149:3050/musicQuestions")!)
+//        case 4:
+//            vc.viewModel = QuestionsViewModelV2(url: URL(string: "http://207.154.204.149:3050/movieQuestions")!)
+//        default:
+//            print("")
+//        }
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    
     convenience init?(hex: String) {
         let r, g, b, a: CGFloat
         if hex.hasPrefix("#") {
@@ -115,7 +114,8 @@ extension UIView {
 
 
 extension UIImageView {
-    func applyBlurEffect(context:CIContext) {
+    func applyBlurEffect() {
+        let context = CIContext(options: nil)
         let currentFilter = CIFilter(name: "CIGaussianBlur")
         let beginImage = CIImage(image: self.image!)
         currentFilter!.setValue(beginImage, forKey: kCIInputImageKey)
