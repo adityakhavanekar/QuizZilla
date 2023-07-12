@@ -84,26 +84,26 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     
     @IBAction func option1Tapped(_ sender: UIButton) {
-        animateButton(option1View, correct: true)
+        animateView(option1View, correct: true)
     }
     
     @IBAction func option2Tapped(_ sender: UIButton) {
-        animateButton(option2View, correct: true)
+        animateView(option2View, correct: true)
     }
     
     
     @IBAction func option3Tapped(_ sender: UIButton) {
-        animateButton(option3View, correct: true)
+        animateView(option3View, correct: true)
     }
     
     @IBAction func option4Tapped(_ sender: UIButton) {
-        animateButton(option4View, correct: true)
+        animateView(option4View, correct: true)
     }
 }
 
 //MARK: - Animations
 extension QuestionsCollectionViewCellV2{
-    private func animateButton(_ view: UIView,correct:Bool) {
+    private func animateView(_ view: UIView,correct:Bool) {
         UIView.animate(withDuration: 0.2, animations: {
             if correct == true{
                 view.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
@@ -117,7 +117,7 @@ extension QuestionsCollectionViewCellV2{
         })
     }
     
-    func seaSawButton(_ button: UIView) {
+    func seaSawView(_ button: UIView) {
         let duration = 0.2
         let angle: CGFloat = .pi / 8
         
