@@ -16,6 +16,7 @@ class QuestionsViewControllerV2: UIViewController {
     
     var categoryStr: String = ""
     var viewModel:QuestionsViewModelV2?
+    var scorePoints:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +56,7 @@ extension QuestionsViewControllerV2: UICollectionViewDelegate, UICollectionViewD
         if let data = viewModel?.getQuestion(index: indexPath.row){
             var model = data
             model.options.shuffle()
+            cell.delegate = self
             cell.setupCell(model: model,questionNumber: indexPath.row+1)
         }
         return cell
@@ -72,5 +74,36 @@ extension QuestionsViewControllerV2: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
+    }
+}
+
+extension QuestionsViewControllerV2: QuestionsCollectionViewCellDelegateV2{
+    func optionTapped(cell: QuestionsCollectionViewCellV2, points: Int) {
+        scorePoints += points
+        guard let indexPath = questionCollectionView.indexPath(for: cell) else { return }
+        if let count = viewModel?.getQuestionsCount(){
+            if indexPath.row < count - 1 {
+                let nextIndexPath = IndexPath(row: indexPath.row + 1, section: indexPath.section)
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.5){
+                    self.questionCollectionView.scrollToItem(at: nextIndexPath, at: .centeredHorizontally, animated: true)
+                }
+            }else{
+                let vc = ResultViewController()
+                if let count = viewModel?.getQuestionsCount(){
+                    let percentage = calculatePercentage(marksObtained: Double(self.scorePoints), totalMarks: Double(count))
+                    if percentage >= 50{
+                        vc.configure(percentage: "\(percentage)% Score", congoString: "Congrats", colorHexCode: "#3CB572", animationString: "Celebration")
+                    }else if percentage < 50{
+                        vc.configure(percentage: "\(percentage)% Score", congoString: "Try Again", colorHexCode: "#FF5252", animationString: "tryAgain")
+                    }
+                }
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+        
+        func calculatePercentage(marksObtained: Double, totalMarks: Double) -> Int {
+            let marks = Int((marksObtained / totalMarks) * 100.0)
+            return marks
+        }
     }
 }

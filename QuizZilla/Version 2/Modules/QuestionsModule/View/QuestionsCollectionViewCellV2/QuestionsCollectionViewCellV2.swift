@@ -8,6 +8,10 @@
 import UIKit
 import CoreImage
 
+protocol QuestionsCollectionViewCellDelegateV2{
+    func optionTapped(cell:QuestionsCollectionViewCellV2,points:Int)
+}
+
 class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     @IBOutlet weak var hintImgView: UIImageView!
@@ -43,6 +47,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     @IBOutlet weak var questionTitleLbl: UILabel!
     
     var correctAns : String?
+    var delegate : QuestionsCollectionViewCellDelegateV2?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,6 +59,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     }
     
     private func setupUI(){
+        isUserInteractionEnabled = true
         questionView.layer.cornerRadius = 20
         questionView.layer.masksToBounds = true
         
@@ -73,6 +79,13 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         option4View.applyLiftedShadowEffectToView(cornerRadius: 20)
         
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1){
+            
+            self.option1Btn.frame = self.option1View.bounds
+            self.option2Btn.frame = self.option2View.bounds
+            self.option3Btn.frame = self.option3View.bounds
+            self.option4Btn.frame = self.option4View.bounds
+            
+            
             self.option1AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
             self.option2AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
             self.option3AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
@@ -100,10 +113,13 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         if option1Btn.titleLabel?.text == correctAns{
             option1View.animateView(correct: true)
             option1View.backgroundColor = UIColor.init(hex: ColorEnums.correct.rawValue)
+            delegate?.optionTapped(cell: self, points: 1)
         }else{
             option1View.animateView(correct: false)
             option1View.backgroundColor = UIColor.init(hex: ColorEnums.wrong.rawValue)
+            delegate?.optionTapped(cell: self, points: 0)
         }
+        isUserInteractionEnabled = false
         option1AlphaTitleLbl.textColor = .white
         option1TitleLbl.textColor = .white
         option1AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
@@ -113,10 +129,13 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         if option2Btn.titleLabel?.text == correctAns{
             option2View.animateView(correct: true)
             option2View.backgroundColor = UIColor.init(hex: "#3CB572")
+            delegate?.optionTapped(cell: self, points: 1)
         }else{
             option2View.animateView(correct: false)
             option2View.backgroundColor = UIColor.init(hex: "#FF5252")
+            delegate?.optionTapped(cell: self, points: 0)
         }
+        isUserInteractionEnabled = false
         option2AlphaTitleLbl.textColor = .white
         option2TitleLbl.textColor = .white
         option2AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
@@ -127,10 +146,13 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         if option3Btn.titleLabel?.text == correctAns{
             option3View.animateView(correct: true)
             option3View.backgroundColor = UIColor.init(hex: "#3CB572")
+            delegate?.optionTapped(cell: self, points: 1)
         }else{
             option3View.animateView(correct: false)
             option3View.backgroundColor = UIColor.init(hex: "#FF5252")
+            delegate?.optionTapped(cell: self, points: 0)
         }
+        isUserInteractionEnabled = false
         option3AlphaTitleLbl.textColor = .white
         option3TitleLbl.textColor = .white
         option3AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
@@ -140,10 +162,13 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         if option4Btn.titleLabel?.text == correctAns{
             option4View.animateView(correct: true)
             option4View.backgroundColor = UIColor.init(hex: "#3CB572")
+            delegate?.optionTapped(cell: self, points: 1)
         }else{
             option4View.animateView(correct: false)
             option4View.backgroundColor = UIColor.init(hex: "#FF5252")
+            delegate?.optionTapped(cell: self, points: 0)
         }
+        isUserInteractionEnabled = false
         option4AlphaTitleLbl.textColor = .white
         option4TitleLbl.textColor = .white
         option4AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
