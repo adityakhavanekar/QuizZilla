@@ -286,18 +286,22 @@
             <size key="customSize" width="477" height="873"/>
             <connections>
                 <outlet property="hintImgView" destination="ha9-vO-OXE" id="yWs-9y-qGi"/>
+                <outlet property="option1AlphaTitleLbl" destination="m86-Et-WHS" id="Jrr-sI-S7b"/>
                 <outlet property="option1AlphaView" destination="KgF-HK-X7W" id="0PI-J6-Id2"/>
                 <outlet property="option1Btn" destination="Woc-tJ-WhL" id="AfI-kx-tHj"/>
                 <outlet property="option1TitleLbl" destination="dRI-jz-J6H" id="zbn-zy-PNi"/>
                 <outlet property="option1View" destination="F9X-EQ-QFC" id="kvE-2r-4ay"/>
+                <outlet property="option2AlphaTitleLbl" destination="rSf-by-fgi" id="Y7m-D9-qlB"/>
                 <outlet property="option2AlphaView" destination="ogc-JA-RKg" id="yHV-TX-tlF"/>
                 <outlet property="option2Btn" destination="XNe-1P-uxP" id="0KO-z8-sEh"/>
                 <outlet property="option2TitleLbl" destination="yRX-kG-sp8" id="y4T-uW-UdX"/>
                 <outlet property="option2View" destination="Dbw-vX-6Qh" id="JtK-bY-xlK"/>
+                <outlet property="option3AlphaTitleLbl" destination="xQK-lr-JhS" id="Qlh-nh-6QX"/>
                 <outlet property="option3AlphaView" destination="Xux-9I-82e" id="VbA-9N-aRx"/>
                 <outlet property="option3Btn" destination="C5g-rV-wud" id="ZHz-po-GAu"/>
                 <outlet property="option3TitleLbl" destination="8go-cX-FhL" id="baq-aq-BtO"/>
                 <outlet property="option3View" destination="vJl-7o-B8h" id="Q9p-pT-hzm"/>
+                <outlet property="option4AlphaTitleLbl" destination="geC-nU-maT" id="3az-f0-PgR"/>
                 <outlet property="option4AlphaView" destination="O5k-XO-Qxy" id="mIh-bB-5Ol"/>
                 <outlet property="option4Btn" destination="phR-tV-lnc" id="ewE-1G-jzK"/>
                 <outlet property="option4TitleLbl" destination="iTr-uP-830" id="58h-u1-4Sq"/>

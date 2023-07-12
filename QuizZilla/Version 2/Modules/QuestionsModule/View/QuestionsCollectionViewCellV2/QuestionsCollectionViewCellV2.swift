@@ -34,12 +34,21 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     @IBOutlet weak var option3TitleLbl: UILabel!
     @IBOutlet weak var option4TitleLbl: UILabel!
     
+    @IBOutlet weak var option1AlphaTitleLbl: UILabel!
+    @IBOutlet weak var option2AlphaTitleLbl: UILabel!
+    @IBOutlet weak var option3AlphaTitleLbl: UILabel!
+    @IBOutlet weak var option4AlphaTitleLbl: UILabel!
+    
     @IBOutlet weak var questionTitleLbl: UILabel!
     
     var correctAns : String?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
+    }
+    
+    override func prepareForReuse() {
         setupUI()
     }
     
@@ -68,41 +77,75 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
             self.option3AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
             self.option4AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
         }
+        
+        option1View.backgroundColor = .white
+        option2View.backgroundColor = .white
+        option3View.backgroundColor = .white
+        option4View.backgroundColor = .white
+        
+        option1TitleLbl.textColor = .black
+        option2TitleLbl.textColor = .black
+        option3TitleLbl.textColor = .black
+        option4TitleLbl.textColor = .black
+        
+        option1AlphaTitleLbl.textColor = .black
+        option2AlphaTitleLbl.textColor = .black
+        option3AlphaTitleLbl.textColor = .black
+        option4AlphaTitleLbl.textColor = .black
     }
     
     
     @IBAction func option1Tapped(_ sender: UIButton) {
         if option1Btn.titleLabel?.text == correctAns{
             option1View.animateView(correct: true)
+            option1View.backgroundColor = UIColor.init(hex: "#3CB572")
         }else{
             option1View.animateView(correct: false)
+            option1View.backgroundColor = UIColor.init(hex: "#FF5252")
         }
-        
+        option1AlphaTitleLbl.textColor = .white
+        option1TitleLbl.textColor = .white
+        option1AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
     @IBAction func option2Tapped(_ sender: UIButton) {
         if option2Btn.titleLabel?.text == correctAns{
             option2View.animateView(correct: true)
+            option2View.backgroundColor = UIColor.init(hex: "#3CB572")
         }else{
             option2View.animateView(correct: false)
+            option2View.backgroundColor = UIColor.init(hex: "#FF5252")
         }
+        option2AlphaTitleLbl.textColor = .white
+        option2TitleLbl.textColor = .white
+        option2AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
     
     @IBAction func option3Tapped(_ sender: UIButton) {
         if option3Btn.titleLabel?.text == correctAns{
             option3View.animateView(correct: true)
+            option3View.backgroundColor = UIColor.init(hex: "#3CB572")
         }else{
             option3View.animateView(correct: false)
+            option3View.backgroundColor = UIColor.init(hex: "#FF5252")
         }
+        option3AlphaTitleLbl.textColor = .white
+        option3TitleLbl.textColor = .white
+        option3AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
     @IBAction func option4Tapped(_ sender: UIButton) {
         if option4Btn.titleLabel?.text == correctAns{
             option4View.animateView(correct: true)
+            option4View.backgroundColor = UIColor.init(hex: "#3CB572")
         }else{
             option4View.animateView(correct: false)
+            option4View.backgroundColor = UIColor.init(hex: "#FF5252")
         }
+        option4AlphaTitleLbl.textColor = .white
+        option4TitleLbl.textColor = .white
+        option4AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
     func setupCell(model:TriviaElementV2){
