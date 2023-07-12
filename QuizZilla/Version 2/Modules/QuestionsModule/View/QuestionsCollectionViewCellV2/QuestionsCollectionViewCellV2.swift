@@ -72,8 +72,6 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     
     @IBAction func option1Tapped(_ sender: UIButton) {
-        print(option1Btn.titleLabel?.text! ?? "no Ans")
-        print(correctAns!)
         if option1Btn.titleLabel?.text == correctAns{
             option1View.animateView(correct: true)
         }else{
@@ -83,8 +81,6 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     }
     
     @IBAction func option2Tapped(_ sender: UIButton) {
-        print(option2Btn.titleLabel?.text! ?? "no Ans")
-        print(correctAns!)
         if option2Btn.titleLabel?.text == correctAns{
             option2View.animateView(correct: true)
         }else{
@@ -94,8 +90,6 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     
     @IBAction func option3Tapped(_ sender: UIButton) {
-        print(option3Btn.titleLabel?.text! ?? "no Ans")
-        print(correctAns!)
         if option3Btn.titleLabel?.text == correctAns{
             option3View.animateView(correct: true)
         }else{
@@ -104,8 +98,6 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     }
     
     @IBAction func option4Tapped(_ sender: UIButton) {
-        print(option4Btn.titleLabel?.text! ?? "no Ans")
-        print(correctAns!)
         if option4Btn.titleLabel?.text == correctAns{
             option4View.animateView(correct: true)
         }else{
@@ -127,6 +119,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         option4Btn.setTitle(model.options[3], for: .normal)
         
         correctAns = model.ca
+        
         hintImgView.sd_setImage(with: URL(string: model.imageURL ?? "")) { image, err, cach, ur in
             self.hintImgView.applyBlurEffect()
             self.hintImgView.alpha = 0.5
