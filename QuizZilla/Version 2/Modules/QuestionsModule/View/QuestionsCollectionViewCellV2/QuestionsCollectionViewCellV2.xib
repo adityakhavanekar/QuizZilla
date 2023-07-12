@@ -36,7 +36,7 @@
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTW-p5-Sei">
                                         <rect key="frame" x="20" y="10" width="357" height="285.66666666666669"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="25"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -306,6 +306,7 @@
                 <outlet property="option4Btn" destination="phR-tV-lnc" id="ewE-1G-jzK"/>
                 <outlet property="option4TitleLbl" destination="iTr-uP-830" id="58h-u1-4Sq"/>
                 <outlet property="option4View" destination="WfH-UM-IwU" id="2G3-EZ-JGY"/>
+                <outlet property="questionNumberLbl" destination="H25-qg-sYp" id="jtD-W0-45r"/>
                 <outlet property="questionTitleLbl" destination="DTW-p5-Sei" id="JVU-Ex-5SF"/>
                 <outlet property="questionView" destination="8RW-Nr-dY4" id="CNp-UK-9GE"/>
             </connections>

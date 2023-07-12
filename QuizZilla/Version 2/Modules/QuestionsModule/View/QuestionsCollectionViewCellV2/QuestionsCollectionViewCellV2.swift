@@ -39,6 +39,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     @IBOutlet weak var option3AlphaTitleLbl: UILabel!
     @IBOutlet weak var option4AlphaTitleLbl: UILabel!
     
+    @IBOutlet weak var questionNumberLbl: UILabel!
     @IBOutlet weak var questionTitleLbl: UILabel!
     
     var correctAns : String?
@@ -98,10 +99,10 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     @IBAction func option1Tapped(_ sender: UIButton) {
         if option1Btn.titleLabel?.text == correctAns{
             option1View.animateView(correct: true)
-            option1View.backgroundColor = UIColor.init(hex: "#3CB572")
+            option1View.backgroundColor = UIColor.init(hex: ColorEnums.correct.rawValue)
         }else{
             option1View.animateView(correct: false)
-            option1View.backgroundColor = UIColor.init(hex: "#FF5252")
+            option1View.backgroundColor = UIColor.init(hex: ColorEnums.wrong.rawValue)
         }
         option1AlphaTitleLbl.textColor = .white
         option1TitleLbl.textColor = .white
@@ -148,7 +149,8 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         option4AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
-    func setupCell(model:TriviaElementV2){
+    func setupCell(model:TriviaElementV2,questionNumber:Int){
+        questionNumberLbl.text = "Question \(questionNumber)"
         questionTitleLbl.text = model.question
         
         option1TitleLbl.text = model.options[0]

@@ -55,7 +55,7 @@ extension QuestionsViewControllerV2: UICollectionViewDelegate, UICollectionViewD
         if let data = viewModel?.getQuestion(index: indexPath.row){
             var model = data
             model.options.shuffle()
-            cell.setupCell(model: model)
+            cell.setupCell(model: model,questionNumber: indexPath.row+1)
         }
         return cell
     }
