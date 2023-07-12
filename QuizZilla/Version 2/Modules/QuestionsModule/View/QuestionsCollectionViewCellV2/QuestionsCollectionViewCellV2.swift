@@ -85,7 +85,6 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
             self.option3Btn.frame = self.option3View.bounds
             self.option4Btn.frame = self.option4View.bounds
             
-            
             self.option1AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
             self.option2AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
             self.option3AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
