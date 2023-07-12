@@ -117,13 +117,14 @@ extension UIImageView {
     func applyBlurEffect() {
         let context = CIContext(options: nil)
         let currentFilter = CIFilter(name: "CIGaussianBlur")
-        let beginImage = CIImage(image: self.image!)
+        guard let img = self.image else {return}
+        guard let beginImage = CIImage(image: img) else {return}
         currentFilter!.setValue(beginImage, forKey: kCIInputImageKey)
-        currentFilter!.setValue(10, forKey: kCIInputRadiusKey)
+        currentFilter!.setValue(5, forKey: kCIInputRadiusKey)
         
         let cropFilter = CIFilter(name: "CICrop")
         cropFilter!.setValue(currentFilter!.outputImage, forKey: kCIInputImageKey)
-        cropFilter!.setValue(CIVector(cgRect: beginImage!.extent), forKey: "inputRectangle")
+        cropFilter!.setValue(CIVector(cgRect: beginImage.extent), forKey: "inputRectangle")
         
         let output = cropFilter!.outputImage
         let cgimg = context.createCGImage(output!, from: output!.extent)

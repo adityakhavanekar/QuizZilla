@@ -21,7 +21,7 @@ struct TriviaV2: Codable {
 
 struct TriviaElementV2: Codable {
     let id, question: String
-    let options: [String]
+    var options: [String]
     let ca: String
     let imageURL: String?
 

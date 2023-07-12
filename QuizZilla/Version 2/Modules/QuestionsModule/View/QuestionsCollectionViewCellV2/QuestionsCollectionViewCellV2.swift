@@ -36,6 +36,8 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     @IBOutlet weak var questionTitleLbl: UILabel!
     
+    var correctAns : String?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
@@ -44,9 +46,6 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     private func setupUI(){
         questionView.layer.cornerRadius = 20
         questionView.layer.masksToBounds = true
-        
-        hintImgView.applyBlurEffect()
-        hintImgView.alpha = 0.8
         
         option1View.layer.cornerRadius = 20
         option2View.layer.cornerRadius = 20
@@ -73,19 +72,64 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     
     @IBAction func option1Tapped(_ sender: UIButton) {
-        option1View.animateView(correct: true)
+        print(option1Btn.titleLabel?.text! ?? "no Ans")
+        print(correctAns!)
+        if option1Btn.titleLabel?.text == correctAns{
+            option1View.animateView(correct: true)
+        }else{
+            option1View.animateView(correct: false)
+        }
+        
     }
     
     @IBAction func option2Tapped(_ sender: UIButton) {
-        option2View.animateView(correct: false)
+        print(option2Btn.titleLabel?.text! ?? "no Ans")
+        print(correctAns!)
+        if option2Btn.titleLabel?.text == correctAns{
+            option2View.animateView(correct: true)
+        }else{
+            option2View.animateView(correct: false)
+        }
     }
     
     
     @IBAction func option3Tapped(_ sender: UIButton) {
-        option3View.animateView(correct: true)
+        print(option3Btn.titleLabel?.text! ?? "no Ans")
+        print(correctAns!)
+        if option3Btn.titleLabel?.text == correctAns{
+            option3View.animateView(correct: true)
+        }else{
+            option3View.animateView(correct: false)
+        }
     }
     
     @IBAction func option4Tapped(_ sender: UIButton) {
-        option4View.animateView(correct: false)
+        print(option4Btn.titleLabel?.text! ?? "no Ans")
+        print(correctAns!)
+        if option4Btn.titleLabel?.text == correctAns{
+            option4View.animateView(correct: true)
+        }else{
+            option4View.animateView(correct: false)
+        }
+    }
+    
+    func setupCell(model:TriviaElementV2){
+        questionTitleLbl.text = model.question
+        
+        option1TitleLbl.text = model.options[0]
+        option2TitleLbl.text = model.options[1]
+        option3TitleLbl.text = model.options[2]
+        option4TitleLbl.text = model.options[3]
+        
+        option1Btn.setTitle(model.options[0], for: .normal)
+        option2Btn.setTitle(model.options[1], for: .normal)
+        option3Btn.setTitle(model.options[2], for: .normal)
+        option4Btn.setTitle(model.options[3], for: .normal)
+        
+        correctAns = model.ca
+        hintImgView.sd_setImage(with: URL(string: model.imageURL ?? "")) { image, err, cach, ur in
+            self.hintImgView.applyBlurEffect()
+            self.hintImgView.alpha = 0.5
+        }
     }
 }

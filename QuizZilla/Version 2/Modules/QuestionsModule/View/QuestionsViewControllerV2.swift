@@ -9,8 +9,13 @@ import UIKit
 
 class QuestionsViewControllerV2: UIViewController {
 
+    @IBOutlet weak var bannerAdView: UIView!
+    @IBOutlet weak var categoryLbl: UILabel!
     @IBOutlet weak var questionCollectionView: UICollectionView!
     @IBOutlet weak var backButton: UIButton!
+    
+    var categoryStr: String = ""
+    var viewModel:QuestionsViewModelV2?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +24,14 @@ class QuestionsViewControllerV2: UIViewController {
     
     private func setupUI(){
         navigationController?.navigationBar.isHidden = true
+        categoryLbl.text = categoryStr
         backButton.applyLiftedShadowEffect(cornerRadius: backButton.frame.height/2)
         setupCollectionView()
+        viewModel?.getQuestions {
+            DispatchQueue.main.async {
+                self.questionCollectionView.reloadData()
+            }
+        }
     }
     
     private func setupCollectionView(){
@@ -36,11 +47,16 @@ class QuestionsViewControllerV2: UIViewController {
 
 extension QuestionsViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return viewModel?.getQuestionsCount() ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = questionCollectionView.dequeueReusableCell(withReuseIdentifier: "QuestionsCollectionViewCellV2", for: indexPath) as! QuestionsCollectionViewCellV2
+        if let data = viewModel?.getQuestion(index: indexPath.row){
+            var model = data
+            model.options.shuffle()
+            cell.setupCell(model: model)
+        }
         return cell
     }
     
