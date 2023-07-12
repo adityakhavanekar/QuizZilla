@@ -7,18 +7,6 @@
 
 import Foundation
 
-struct TriviaV2: Codable {
-    let id, question: String
-    let options: [String]
-    let ca: String
-
-    enum CodingKeys: String, CodingKey {
-        case id = "_id"
-        case question, options
-        case ca = "CA"
-    }
-}
-
 struct TriviaElementV2: Codable {
     let id, question: String
     var options: [String]
