@@ -12,9 +12,11 @@ class ResultViewControllerV2: UIViewController {
     
     @IBOutlet weak var contView: UIView!
     @IBOutlet weak var animationContView: UIView!
+    
     @IBOutlet weak var congratsLbl: UILabel!
     @IBOutlet weak var scorePercentLbl: UILabel!
     @IBOutlet weak var completedLbl: UILabel!
+    
     @IBOutlet weak var doneBtn: UIButton!
     
     var animationView: LottieAnimationView?
