@@ -46,18 +46,16 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         questionView.layer.masksToBounds = true
         
         hintImgView.applyBlurEffect()
-        hintImgView.alpha = 0.65
+        hintImgView.alpha = 0.8
         
         option1View.layer.cornerRadius = 20
-        option1View.layer.masksToBounds = true
-        
         option2View.layer.cornerRadius = 20
-        option2View.layer.masksToBounds = true
-        
         option3View.layer.cornerRadius = 20
-        option3View.layer.masksToBounds = true
-        
         option4View.layer.cornerRadius = 20
+        
+        option1View.layer.masksToBounds = true
+        option2View.layer.masksToBounds = true
+        option3View.layer.masksToBounds = true
         option4View.layer.masksToBounds = true
         
         option1View.applyLiftedShadowEffectToView(cornerRadius: 20)

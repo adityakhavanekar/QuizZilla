@@ -58,10 +58,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2W-uL-hmc" userLabel="categoryView">
-                    <rect key="frame" x="0.0" y="200" width="393" height="568"/>
+                    <rect key="frame" x="0.0" y="200" width="393" height="575.33333333333337"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="tFu-29-NiS">
-                            <rect key="frame" x="15" y="50" width="363" height="513"/>
+                            <rect key="frame" x="15" y="50" width="363" height="525.33333333333337"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Cx-6B-5YE">
                                 <size key="itemSize" width="128" height="128"/>
@@ -75,16 +75,13 @@
                     <constraints>
                         <constraint firstItem="tFu-29-NiS" firstAttribute="leading" secondItem="s2W-uL-hmc" secondAttribute="leading" constant="15" id="8tA-VP-1tn"/>
                         <constraint firstItem="tFu-29-NiS" firstAttribute="top" secondItem="s2W-uL-hmc" secondAttribute="top" constant="50" id="VSS-3V-SEC"/>
-                        <constraint firstAttribute="bottom" secondItem="tFu-29-NiS" secondAttribute="bottom" constant="5" id="VeX-o8-ELr"/>
+                        <constraint firstAttribute="bottom" secondItem="tFu-29-NiS" secondAttribute="bottom" id="VeX-o8-ELr"/>
                         <constraint firstAttribute="trailing" secondItem="tFu-29-NiS" secondAttribute="trailing" constant="15" id="jsB-fU-2cJ"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0qF-i1-JrU" userLabel="adView">
-                    <rect key="frame" x="0.0" y="768" width="393" height="50"/>
-                    <color key="backgroundColor" systemColor="systemGreenColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="50" id="Avt-J1-3S3"/>
-                    </constraints>
+                    <rect key="frame" x="0.0" y="775.33333333333337" width="393" height="42.666666666666629"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -93,6 +90,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0qF-i1-JrU" secondAttribute="trailing" id="4Rn-Aw-jhP"/>
                 <constraint firstItem="s2W-uL-hmc" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="A40-Xc-Mjo"/>
                 <constraint firstItem="0qF-i1-JrU" firstAttribute="top" secondItem="s2W-uL-hmc" secondAttribute="bottom" id="DLp-wQ-EXF"/>
+                <constraint firstItem="0qF-i1-JrU" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.05" id="Fxe-Jg-nUf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="0qF-i1-JrU" secondAttribute="bottom" id="HhF-Ne-zP7"/>
                 <constraint firstItem="5U6-Ra-CRI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="QW0-1d-rwu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5U6-Ra-CRI" secondAttribute="trailing" id="UKi-hl-XbR"/>
@@ -108,9 +106,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
