@@ -90,6 +90,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
             self.option2AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
             self.option3AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
             self.option4AlphaView.addBorder(toSide: .right, withColor: UIColor.lightGray.cgColor, andThickness: 1)
+            
         }
         
         option1View.backgroundColor = .white
