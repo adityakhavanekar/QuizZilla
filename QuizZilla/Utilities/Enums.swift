@@ -40,3 +40,9 @@ enum Categories:String{
 enum HomeCells:String{
     case categoryCell = "CategoryCollectionViewCell"
 }
+
+enum QuestionCells:String{
+    case QuestionsCollectionViewCell = "QuestionsCollectionViewCell"
+    case QuestionsCollectionViewCellV2 = "QuestionsCollectionViewCellV2"
+    case NewQuestionsCollectionViewCell = "NewQuestionsCollectionViewCell"
+}

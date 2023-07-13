@@ -128,11 +128,11 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     @IBAction func option2Tapped(_ sender: UIButton) {
         if option2Btn.titleLabel?.text == correctAns{
             option2View.animateView(correct: true)
-            option2View.backgroundColor = UIColor.init(hex: "#3CB572")
+            option2View.backgroundColor = UIColor.init(hex: ColorEnums.correct.rawValue)
             delegate?.optionTapped(cell: self, points: 1)
         }else{
             option2View.animateView(correct: false)
-            option2View.backgroundColor = UIColor.init(hex: "#FF5252")
+            option2View.backgroundColor = UIColor.init(hex: ColorEnums.wrong.rawValue)
             delegate?.optionTapped(cell: self, points: 0)
         }
         isUserInteractionEnabled = false
@@ -145,11 +145,11 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     @IBAction func option3Tapped(_ sender: UIButton) {
         if option3Btn.titleLabel?.text == correctAns{
             option3View.animateView(correct: true)
-            option3View.backgroundColor = UIColor.init(hex: "#3CB572")
+            option3View.backgroundColor = UIColor.init(hex: ColorEnums.correct.rawValue)
             delegate?.optionTapped(cell: self, points: 1)
         }else{
             option3View.animateView(correct: false)
-            option3View.backgroundColor = UIColor.init(hex: "#FF5252")
+            option3View.backgroundColor = UIColor.init(hex: ColorEnums.wrong.rawValue)
             delegate?.optionTapped(cell: self, points: 0)
         }
         isUserInteractionEnabled = false
@@ -161,11 +161,11 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     @IBAction func option4Tapped(_ sender: UIButton) {
         if option4Btn.titleLabel?.text == correctAns{
             option4View.animateView(correct: true)
-            option4View.backgroundColor = UIColor.init(hex: "#3CB572")
+            option4View.backgroundColor = UIColor.init(hex: ColorEnums.correct.rawValue)
             delegate?.optionTapped(cell: self, points: 1)
         }else{
             option4View.animateView(correct: false)
-            option4View.backgroundColor = UIColor.init(hex: "#FF5252")
+            option4View.backgroundColor = UIColor.init(hex: ColorEnums.wrong.rawValue)
             delegate?.optionTapped(cell: self, points: 0)
         }
         isUserInteractionEnabled = false
