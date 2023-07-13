@@ -18,10 +18,10 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     @IBOutlet weak var questionView: UIView!
     
-    @IBOutlet weak var option4Btn: UIButton!
-    @IBOutlet weak var option3Btn: UIButton!
-    @IBOutlet weak var option2Btn: UIButton!
     @IBOutlet weak var option1Btn: UIButton!
+    @IBOutlet weak var option2Btn: UIButton!
+    @IBOutlet weak var option3Btn: UIButton!
+    @IBOutlet weak var option4Btn: UIButton!
     
     @IBOutlet weak var hintBtn: UIButton!
     
@@ -30,10 +30,10 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     @IBOutlet weak var option3View: UIView!
     @IBOutlet weak var option4View: UIView!
     
-    @IBOutlet weak var option4AlphaView: UIView!
-    @IBOutlet weak var option3AlphaView: UIView!
-    @IBOutlet weak var option2AlphaView: UIView!
     @IBOutlet weak var option1AlphaView: UIView!
+    @IBOutlet weak var option2AlphaView: UIView!
+    @IBOutlet weak var option3AlphaView: UIView!
+    @IBOutlet weak var option4AlphaView: UIView!
     
     @IBOutlet weak var option1TitleLbl: UILabel!
     @IBOutlet weak var option2TitleLbl: UILabel!
