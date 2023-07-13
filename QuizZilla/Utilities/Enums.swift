@@ -46,3 +46,8 @@ enum QuestionCells:String{
     case QuestionsCollectionViewCellV2 = "QuestionsCollectionViewCellV2"
     case NewQuestionsCollectionViewCell = "NewQuestionsCollectionViewCell"
 }
+
+enum Adverts:String{
+    case bannerAd = "ca-app-pub-8260816350989246/3781983591"
+    case bannerAdTest = "ca-app-pub-3940256099942544/2934735716"
+}
