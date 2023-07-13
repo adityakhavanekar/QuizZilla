@@ -97,6 +97,7 @@ extension QuestionsViewControllerV2: UICollectionViewDelegate, UICollectionViewD
 }
 
 extension QuestionsViewControllerV2: QuestionsCollectionViewCellDelegateV2{
+    
     func optionTapped(cell: QuestionsCollectionViewCellV2, points: Int) {
         scorePoints += points
         guard let indexPath = questionCollectionView.indexPath(for: cell) else { return }
@@ -125,4 +126,5 @@ extension QuestionsViewControllerV2: QuestionsCollectionViewCellDelegateV2{
             return marks
         }
     }
+    
 }
