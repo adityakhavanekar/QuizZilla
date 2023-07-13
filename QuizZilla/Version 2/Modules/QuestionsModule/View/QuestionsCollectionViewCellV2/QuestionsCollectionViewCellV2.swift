@@ -23,6 +23,8 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     @IBOutlet weak var option2Btn: UIButton!
     @IBOutlet weak var option1Btn: UIButton!
     
+    @IBOutlet weak var hintBtn: UIButton!
+    
     @IBOutlet weak var option1View: UIView!
     @IBOutlet weak var option2View: UIView!
     @IBOutlet weak var option3View: UIView!
@@ -48,6 +50,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     var correctAns : String?
     var delegate : QuestionsCollectionViewCellDelegateV2?
+    var hintUsed : Bool = false
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,6 +63,8 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     private func setupUI(){
         isUserInteractionEnabled = true
+        hintUsed = false
+        
         questionView.layer.cornerRadius = 20
         questionView.layer.masksToBounds = true
         
@@ -97,6 +102,11 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         option3View.backgroundColor = .white
         option4View.backgroundColor = .white
         
+        option1View.isUserInteractionEnabled = true
+        option2View.isUserInteractionEnabled = true
+        option3View.isUserInteractionEnabled = true
+        option4View.isUserInteractionEnabled = true
+        
         option1TitleLbl.textColor = .black
         option2TitleLbl.textColor = .black
         option3TitleLbl.textColor = .black
@@ -108,6 +118,31 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         option4AlphaTitleLbl.textColor = .black
     }
     
+    private func makeBtnsDisable(labels:[UILabel]){
+        var count = 0
+        for lbl in labels{
+            if count == 2{
+                break
+            }else{
+                if lbl.text != correctAns{
+                    lbl.superview?.isUserInteractionEnabled = false
+                    lbl.superview?.seaSawView(hexString: ColorEnums.wrong.rawValue)
+                    lbl.textColor = .white
+                    count += 1
+                }else{
+                    continue
+                }
+            }
+        }
+    }
+    
+    
+    @IBAction func hintBtnTapped(_ sender: UIButton) {
+        if hintUsed == false{
+            makeBtnsDisable(labels: [option1TitleLbl,option2TitleLbl,option3TitleLbl,option4TitleLbl])
+            hintUsed = true
+        }
+    }
     
     @IBAction func option1Tapped(_ sender: UIButton) {
         if option1Btn.titleLabel?.text == correctAns{
@@ -116,9 +151,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
             correctOrWrong(view: option1View, isCorrect: false)
         }
         isUserInteractionEnabled = false
-        option1AlphaTitleLbl.textColor = .white
         option1TitleLbl.textColor = .white
-        option1AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
     @IBAction func option2Tapped(_ sender: UIButton) {
@@ -128,9 +161,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
             correctOrWrong(view: option2View, isCorrect: false)
         }
         isUserInteractionEnabled = false
-        option2AlphaTitleLbl.textColor = .white
         option2TitleLbl.textColor = .white
-        option2AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
     
@@ -141,9 +172,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
             correctOrWrong(view: option3View, isCorrect: false)
         }
         isUserInteractionEnabled = false
-        option3AlphaTitleLbl.textColor = .white
         option3TitleLbl.textColor = .white
-        option3AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
     @IBAction func option4Tapped(_ sender: UIButton) {
@@ -153,9 +182,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
             correctOrWrong(view: option4View, isCorrect: false)
         }
         isUserInteractionEnabled = false
-        option4AlphaTitleLbl.textColor = .white
         option4TitleLbl.textColor = .white
-        option4AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
     private func correctOrWrong(view:UIView,isCorrect:Bool){
