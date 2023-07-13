@@ -65,23 +65,23 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         isUserInteractionEnabled = true
         hintUsed = false
         
-        questionView.layer.cornerRadius = 20
         questionView.layer.masksToBounds = true
+        questionView.layer.cornerRadius = 20
         
         option1View.layer.cornerRadius = 20
         option2View.layer.cornerRadius = 20
         option3View.layer.cornerRadius = 20
         option4View.layer.cornerRadius = 20
         
-        option1View.layer.masksToBounds = true
-        option2View.layer.masksToBounds = true
-        option3View.layer.masksToBounds = true
-        option4View.layer.masksToBounds = true
-        
         option1View.applyLiftedShadowEffectToView(cornerRadius: 20)
         option2View.applyLiftedShadowEffectToView(cornerRadius: 20)
         option3View.applyLiftedShadowEffectToView(cornerRadius: 20)
         option4View.applyLiftedShadowEffectToView(cornerRadius: 20)
+        
+        option1View.layer.masksToBounds = true
+        option2View.layer.masksToBounds = true
+        option3View.layer.masksToBounds = true
+        option4View.layer.masksToBounds = true
         
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1){
             
@@ -97,15 +97,15 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
             
         }
         
-        option1View.backgroundColor = .white
-        option2View.backgroundColor = .white
-        option3View.backgroundColor = .white
-        option4View.backgroundColor = .white
-        
         option1View.isUserInteractionEnabled = true
         option2View.isUserInteractionEnabled = true
         option3View.isUserInteractionEnabled = true
         option4View.isUserInteractionEnabled = true
+        
+        option1View.backgroundColor = .white
+        option2View.backgroundColor = .white
+        option3View.backgroundColor = .white
+        option4View.backgroundColor = .white
         
         option1TitleLbl.textColor = .black
         option2TitleLbl.textColor = .black
@@ -118,7 +118,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         option4AlphaTitleLbl.textColor = .black
     }
     
-    private func makeBtnsDisable(labels:[UILabel]){
+    private func makeOptionsDisable(labels:[UILabel]){
         var count = 0
         for lbl in labels{
             if count == 2{
@@ -139,7 +139,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     @IBAction func hintBtnTapped(_ sender: UIButton) {
         if hintUsed == false{
-            makeBtnsDisable(labels: [option1TitleLbl,option2TitleLbl,option3TitleLbl,option4TitleLbl])
+            makeOptionsDisable(labels: [option1TitleLbl,option2TitleLbl,option3TitleLbl,option4TitleLbl])
             hintUsed = true
         }
     }
