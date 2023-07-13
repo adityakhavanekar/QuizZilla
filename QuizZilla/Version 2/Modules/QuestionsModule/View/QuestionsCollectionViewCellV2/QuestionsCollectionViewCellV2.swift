@@ -158,7 +158,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         option4AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
-    func correctOrWrong(view:UIView,isCorrect:Bool){
+    private func correctOrWrong(view:UIView,isCorrect:Bool){
         switch isCorrect{
         case true:
             view.animateView(correct: true)
