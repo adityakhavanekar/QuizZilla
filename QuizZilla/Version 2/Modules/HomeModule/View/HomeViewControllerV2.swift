@@ -27,7 +27,7 @@ class HomeViewControllerV2: UIViewController {
     }
     
     private func setupCollectionView(){
-        categoryCollectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCollectionViewCell")
+        categoryCollectionView.register(UINib(nibName: HomeCells.categoryCell.rawValue, bundle: nil), forCellWithReuseIdentifier: HomeCells.categoryCell.rawValue)
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
     }
@@ -39,23 +39,23 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
+        guard let cell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: HomeCells.categoryCell.rawValue, for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
         switch indexPath.item{
         case 0:
-            cell.titleLbl.text = "History"
-            cell.imgView.image = UIImage(named: "History")
+            cell.titleLbl.text = Categories.history.rawValue
+            cell.imgView.image = UIImage(named: Categories.history.rawValue)
         case 1:
-            cell.titleLbl.text = "Sports"
-            cell.imgView.image = UIImage(named: "Sports")
+            cell.titleLbl.text = Categories.sports.rawValue
+            cell.imgView.image = UIImage(named: Categories.sports.rawValue)
         case 2:
-            cell.titleLbl.text = "Science"
-            cell.imgView.image = UIImage(named: "Science")
+            cell.titleLbl.text = Categories.science.rawValue
+            cell.imgView.image = UIImage(named: Categories.science.rawValue)
         case 3:
-            cell.titleLbl.text = "Music"
-            cell.imgView.image = UIImage(named: "music")
+            cell.titleLbl.text = Categories.music.rawValue
+            cell.imgView.image = UIImage(named: Categories.music.rawValue)
         case 4:
-            cell.titleLbl.text = "Movies"
-            cell.imgView.image = UIImage(named: "movies")
+            cell.titleLbl.text = Categories.movie.rawValue
+            cell.imgView.image = UIImage(named: Categories.movie.rawValue)
         default:
             print("")
         }
@@ -79,20 +79,20 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
         let vc = QuestionsViewControllerV2()
         switch indexPath.row{
         case 0:
-            vc.categoryStr = "History"
-            vc.viewModel = QuestionsViewModelV2(url: URL(string: "http://207.154.204.149:3050/historyQuestions")!)
+            vc.categoryStr = Categories.history.rawValue
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.history.url)
         case 1:
-            vc.categoryStr = "Sports"
-            vc.viewModel = QuestionsViewModelV2(url: URL(string: "http://207.154.204.149:3050/sportQuestions")!)
+            vc.categoryStr = Categories.sports.rawValue
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.sports.url)
         case 2:
-            vc.categoryStr = "Science"
-            vc.viewModel = QuestionsViewModelV2(url: URL(string: "http://207.154.204.149:3050/scienceQuestions")!)
+            vc.categoryStr = Categories.science.rawValue
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.science.url)
         case 3:
-            vc.categoryStr = "Music"
-            vc.viewModel = QuestionsViewModelV2(url: URL(string: "http://207.154.204.149:3050/musicQuestions")!)
+            vc.categoryStr = Categories.music.rawValue
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.music.url)
         case 4:
-            vc.categoryStr = "Movie"
-            vc.viewModel = QuestionsViewModelV2(url: URL(string: "http://207.154.204.149:3050/movieQuestions")!)
+            vc.categoryStr = Categories.movie.rawValue
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.movie.url)
         default:
             print("")
         }
