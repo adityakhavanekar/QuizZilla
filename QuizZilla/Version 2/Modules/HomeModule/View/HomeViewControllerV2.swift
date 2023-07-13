@@ -6,12 +6,22 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class HomeViewControllerV2: UIViewController {
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
     @IBOutlet weak var categoryView: UIView!
     @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var adView: UIView!
+    
+    private let banner:GADBannerView = {
+        let banner = GADBannerView()
+        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        banner.load(GADRequest())
+        banner.backgroundColor = .clear
+        return banner
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +29,15 @@ class HomeViewControllerV2: UIViewController {
     }
     
     private func setupUI(){
+        banner.rootViewController = self
         self.navigationController?.navigationBar.isHidden = true
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1){
             self.categoryView.roundCorners(corners: [.topRight,.topLeft], radius: 50)
             self.setupCollectionView()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.2){
+            self.banner.frame = self.adView.bounds
+            self.adView.addSubview(self.banner)
         }
     }
     
@@ -99,3 +114,11 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
+
+
+// MARK: - ADS:
+// MARK: Banner:- ca-app-pub-8260816350989246/3781983591
+//                TESTAD: ca-app-pub-3940256099942544/2934735716
+
+
+

@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 //        GADMobileAds.sharedInstance().start(completionHandler: nil)
         GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers =
-                    [ "4914f91586599489a998728187e73566" ]
+                    [ "e0cfae573617d35f0d9292b3dcb8243f" ]
+//        4914f91586599489a998728187e73566
         return true
     }
 

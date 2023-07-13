@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewControllerV2" customModule="QuizZilla" customModuleProvider="target">
             <connections>
+                <outlet property="adView" destination="0qF-i1-JrU" id="YDa-u5-Ffy"/>
                 <outlet property="categoryCollectionView" destination="tFu-29-NiS" id="XC7-NC-SfB"/>
                 <outlet property="categoryView" destination="s2W-uL-hmc" id="spF-RY-Edc"/>
                 <outlet property="topView" destination="5U6-Ra-CRI" id="f2T-LU-pSH"/>
