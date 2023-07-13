@@ -111,13 +111,9 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     @IBAction func option1Tapped(_ sender: UIButton) {
         if option1Btn.titleLabel?.text == correctAns{
-            option1View.animateView(correct: true)
-            option1View.backgroundColor = UIColor.init(hex: ColorEnums.correct.rawValue)
-            delegate?.optionTapped(cell: self, points: 1)
+            correctOrWrong(view: option1View, isCorrect: true)
         }else{
-            option1View.animateView(correct: false)
-            option1View.backgroundColor = UIColor.init(hex: ColorEnums.wrong.rawValue)
-            delegate?.optionTapped(cell: self, points: 0)
+            correctOrWrong(view: option1View, isCorrect: false)
         }
         isUserInteractionEnabled = false
         option1AlphaTitleLbl.textColor = .white
@@ -127,13 +123,9 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     @IBAction func option2Tapped(_ sender: UIButton) {
         if option2Btn.titleLabel?.text == correctAns{
-            option2View.animateView(correct: true)
-            option2View.backgroundColor = UIColor.init(hex: ColorEnums.correct.rawValue)
-            delegate?.optionTapped(cell: self, points: 1)
+            correctOrWrong(view: option2View, isCorrect: true)
         }else{
-            option2View.animateView(correct: false)
-            option2View.backgroundColor = UIColor.init(hex: ColorEnums.wrong.rawValue)
-            delegate?.optionTapped(cell: self, points: 0)
+            correctOrWrong(view: option2View, isCorrect: false)
         }
         isUserInteractionEnabled = false
         option2AlphaTitleLbl.textColor = .white
@@ -144,13 +136,9 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     @IBAction func option3Tapped(_ sender: UIButton) {
         if option3Btn.titleLabel?.text == correctAns{
-            option3View.animateView(correct: true)
-            option3View.backgroundColor = UIColor.init(hex: ColorEnums.correct.rawValue)
-            delegate?.optionTapped(cell: self, points: 1)
+            correctOrWrong(view: option3View, isCorrect: true)
         }else{
-            option3View.animateView(correct: false)
-            option3View.backgroundColor = UIColor.init(hex: ColorEnums.wrong.rawValue)
-            delegate?.optionTapped(cell: self, points: 0)
+            correctOrWrong(view: option3View, isCorrect: false)
         }
         isUserInteractionEnabled = false
         option3AlphaTitleLbl.textColor = .white
@@ -160,18 +148,27 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     @IBAction func option4Tapped(_ sender: UIButton) {
         if option4Btn.titleLabel?.text == correctAns{
-            option4View.animateView(correct: true)
-            option4View.backgroundColor = UIColor.init(hex: ColorEnums.correct.rawValue)
-            delegate?.optionTapped(cell: self, points: 1)
+            correctOrWrong(view: option4View, isCorrect: true)
         }else{
-            option4View.animateView(correct: false)
-            option4View.backgroundColor = UIColor.init(hex: ColorEnums.wrong.rawValue)
-            delegate?.optionTapped(cell: self, points: 0)
+            correctOrWrong(view: option4View, isCorrect: false)
         }
         isUserInteractionEnabled = false
         option4AlphaTitleLbl.textColor = .white
         option4TitleLbl.textColor = .white
         option4AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
+    }
+    
+    func correctOrWrong(view:UIView,isCorrect:Bool){
+        switch isCorrect{
+        case true:
+            view.animateView(correct: true)
+            view.backgroundColor = UIColor.init(hex: ColorEnums.correct.rawValue)
+            delegate?.optionTapped(cell: self, points: 1)
+        case false:
+            view.animateView(correct: false)
+            view.backgroundColor = UIColor.init(hex: ColorEnums.wrong.rawValue)
+            delegate?.optionTapped(cell: self, points: 0)
+        }
     }
     
     func setupCell(model:TriviaElementV2,questionNumber:Int){
