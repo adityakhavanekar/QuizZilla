@@ -118,11 +118,3 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }
-
-
-// MARK: - ADS:
-// MARK: Banner:- ca-app-pub-8260816350989246/3781983591
-//                TESTAD: ca-app-pub-3940256099942544/2934735716
-
-
-
