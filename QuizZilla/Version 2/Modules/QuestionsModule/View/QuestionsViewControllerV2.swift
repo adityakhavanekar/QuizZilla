@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class QuestionsViewControllerV2: UIViewController {
 
@@ -13,10 +14,19 @@ class QuestionsViewControllerV2: UIViewController {
     @IBOutlet weak var categoryLbl: UILabel!
     @IBOutlet weak var questionCollectionView: UICollectionView!
     @IBOutlet weak var backButton: UIButton!
+    @IBOutlet weak var adView: UIView!
     
     var viewModel:QuestionsViewModelV2?
     var categoryStr: String = ""
     var scorePoints:Int = 0
+    
+    private let banner:GADBannerView = {
+        let banner = GADBannerView()
+        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        banner.load(GADRequest())
+        banner.backgroundColor = .clear
+        return banner
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,11 +37,20 @@ class QuestionsViewControllerV2: UIViewController {
         navigationController?.navigationBar.isHidden = true
         categoryLbl.text = categoryStr
         backButton.applyLiftedShadowEffect(cornerRadius: backButton.frame.height/2)
+        setupBannerAd()
         setupCollectionView()
         viewModel?.getQuestions {
             DispatchQueue.main.async {
                 self.questionCollectionView.reloadData()
             }
+        }
+    }
+    
+    private func setupBannerAd(){
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.2){
+            self.banner.rootViewController = self
+            self.banner.frame = self.adView.bounds
+            self.adView.addSubview(self.banner)
         }
     }
     

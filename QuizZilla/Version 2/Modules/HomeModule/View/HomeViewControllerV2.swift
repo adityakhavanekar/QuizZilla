@@ -29,13 +29,17 @@ class HomeViewControllerV2: UIViewController {
     }
     
     private func setupUI(){
-        banner.rootViewController = self
-        self.navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.isHidden = true
+        setupBannerAd()
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1){
             self.categoryView.roundCorners(corners: [.topRight,.topLeft], radius: 50)
             self.setupCollectionView()
         }
+    }
+    
+    private func setupBannerAd(){
         DispatchQueue.main.asyncAfter(deadline: .now()+0.2){
+            self.banner.rootViewController = self
             self.banner.frame = self.adView.bounds
             self.adView.addSubview(self.banner)
         }

@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionsViewControllerV2" customModule="QuizZilla" customModuleProvider="target">
             <connections>
+                <outlet property="adView" destination="Jbo-ci-qu9" id="Ha3-Gs-tnC"/>
                 <outlet property="backButton" destination="RPq-ZJ-cne" id="lQo-rt-Q65"/>
                 <outlet property="bannerAdView" destination="Jbo-ci-qu9" id="aPo-Vq-eW6"/>
                 <outlet property="categoryLbl" destination="S5t-QP-H2I" id="Szd-v0-AZF"/>
