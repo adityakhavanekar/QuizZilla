@@ -77,7 +77,7 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let colWidth = self.categoryCollectionView.frame.width
+        let colWidth = categoryCollectionView.frame.width
         return CGSize(width: colWidth/2 - 15, height: colWidth/2 - 15)
     }
     
@@ -110,6 +110,6 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
         default:
             print("")
         }
-        self.navigationController?.pushViewController(vc, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
