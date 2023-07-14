@@ -127,6 +127,22 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
                 if lbl.text != correctAns{
                     lbl.superview?.isUserInteractionEnabled = false
                     lbl.superview?.seaSawView(hexString: ColorEnums.wrong.rawValue)
+                    switch lbl{
+                    case option1TitleLbl:
+                        option1AlphaTitleLbl.textColor = .white
+                        option1AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
+                    case option2TitleLbl:
+                        option2AlphaTitleLbl.textColor = .white
+                        option2AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
+                    case option3TitleLbl:
+                        option3AlphaTitleLbl.textColor = .white
+                        option3AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
+                    case option4TitleLbl:
+                        option4AlphaTitleLbl.textColor = .white
+                        option4AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
+                    default:
+                        print("")
+                    }
                     lbl.textColor = .white
                     count += 1
                 }else{
@@ -152,6 +168,8 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         }
         isUserInteractionEnabled = false
         option1TitleLbl.textColor = .white
+        option1AlphaTitleLbl.textColor = .white
+        option1AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
     @IBAction func option2Tapped(_ sender: UIButton) {
@@ -162,6 +180,8 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         }
         isUserInteractionEnabled = false
         option2TitleLbl.textColor = .white
+        option2AlphaTitleLbl.textColor = .white
+        option2AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
     
@@ -173,6 +193,8 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         }
         isUserInteractionEnabled = false
         option3TitleLbl.textColor = .white
+        option3AlphaTitleLbl.textColor = .white
+        option3AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
     @IBAction func option4Tapped(_ sender: UIButton) {
@@ -183,6 +205,8 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         }
         isUserInteractionEnabled = false
         option4TitleLbl.textColor = .white
+        option4AlphaTitleLbl.textColor = .white
+        option4AlphaView.addBorder(toSide: .right, withColor: UIColor.white.cgColor, andThickness: 1)
     }
     
     private func correctOrWrong(view:UIView,isCorrect:Bool){
