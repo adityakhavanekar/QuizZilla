@@ -21,5 +21,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     func setupUI(){
         innerView.applyLiftedShadowEffectToView(cornerRadius: 15)
     }
+    
+    func configureCell(title:String,imageName:String){
+        titleLbl.text = title
+        imgView.image = UIImage(named: imageName)
+    }
 
 }

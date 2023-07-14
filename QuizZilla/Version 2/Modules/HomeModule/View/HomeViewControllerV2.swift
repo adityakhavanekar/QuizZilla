@@ -61,20 +61,15 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
         guard let cell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: HomeCells.categoryCell.rawValue, for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
         switch indexPath.item{
         case 0:
-            cell.titleLbl.text = Categories.history.rawValue
-            cell.imgView.image = UIImage(named: Categories.history.rawValue)
+            cell.configureCell(title: Categories.history.rawValue, imageName: Categories.history.rawValue)
         case 1:
-            cell.titleLbl.text = Categories.sports.rawValue
-            cell.imgView.image = UIImage(named: Categories.sports.rawValue)
+            cell.configureCell(title: Categories.sports.rawValue, imageName: Categories.sports.rawValue)
         case 2:
-            cell.titleLbl.text = Categories.science.rawValue
-            cell.imgView.image = UIImage(named: Categories.science.rawValue)
+            cell.configureCell(title: Categories.science.rawValue, imageName: Categories.science.rawValue)
         case 3:
-            cell.titleLbl.text = Categories.music.rawValue
-            cell.imgView.image = UIImage(named: Categories.music.rawValue)
+            cell.configureCell(title: Categories.music.rawValue, imageName: Categories.music.rawValue)
         case 4:
-            cell.titleLbl.text = Categories.movie.rawValue
-            cell.imgView.image = UIImage(named: Categories.movie.rawValue)
+            cell.configureCell(title: Categories.movie.rawValue, imageName: Categories.movie.rawValue)
         default:
             print("")
         }
