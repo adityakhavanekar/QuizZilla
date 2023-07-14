@@ -128,6 +128,8 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
                 break
             }else{
                 if lbl.text != correctAns{
+                    count += 1
+                    lbl.textColor = .white
                     lbl.superview?.isUserInteractionEnabled = false
                     lbl.superview?.seaSawView(hexString: ColorEnums.wrong.rawValue)
                     switch lbl{
@@ -146,8 +148,6 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
                     default:
                         print("")
                     }
-                    lbl.textColor = .white
-                    count += 1
                 }else{
                     continue
                 }
