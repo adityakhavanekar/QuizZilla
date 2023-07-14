@@ -43,6 +43,13 @@ class ResultViewControllerV2: UIViewController {
         }
     }
     
+    func configure(percentage: String, congoString:String, colorHexCode: String, animationString: String){
+        self.scorePercentStr = percentage
+        self.scorePercentTextColor = colorHexCode
+        self.animationString = animationString
+        self.congratsStr = congoString
+    }
+    
     private func setAnimationView(animationName:String, speed:Float){
         animationView = .init(name:animationName)
         animationView?.frame = animationContView.bounds
@@ -50,13 +57,6 @@ class ResultViewControllerV2: UIViewController {
         animationContView.addSubview(animationView!)
         animationView?.loopMode = .loop
         animationView?.play()
-    }
-    
-    func configure(percentage: String, congoString:String, colorHexCode: String, animationString: String){
-        self.scorePercentStr = percentage
-        self.scorePercentTextColor = colorHexCode
-        self.animationString = animationString
-        self.congratsStr = congoString
     }
     
     @IBAction func dontBtnClicked(_ sender: UIButton) {
