@@ -51,3 +51,22 @@ enum Adverts:String{
     case bannerAd = "ca-app-pub-8260816350989246/3781983591"
     case bannerAdTest = "ca-app-pub-3940256099942544/2934735716"
 }
+
+enum Images:String {
+    case history = "History"
+    case science = "Science"
+    case music = "Music"
+    case movie = "Movies"
+    case sports = "Sports"
+    
+    case hMenu = "menu"
+    case hUser = "user"
+    
+    case americe = "america"
+    case correct = "correct"
+    case wrong = "wrong"
+    case qPoint = "point"
+    case tipUsed = "tipUsed"
+    case tip = "tip"
+    
+}

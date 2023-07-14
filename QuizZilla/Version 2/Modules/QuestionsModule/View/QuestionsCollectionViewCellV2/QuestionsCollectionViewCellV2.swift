@@ -62,6 +62,9 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     }
     
     private func setupUI(){
+        
+        self.hintBtn.setImage(UIImage(named: Images.tip.rawValue), for: .normal)
+        
         isUserInteractionEnabled = true
         hintUsed = false
         
@@ -157,6 +160,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         if hintUsed == false{
             makeOptionsDisable(labels: [option1TitleLbl,option2TitleLbl,option3TitleLbl,option4TitleLbl])
             hintUsed = true
+            self.hintBtn.setImage(UIImage(named: Images.tip.rawValue), for: .normal)
         }
     }
     

@@ -61,15 +61,15 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
         guard let cell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: HomeCells.categoryCell.rawValue, for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
         switch indexPath.item{
         case 0:
-            cell.configureCell(title: Categories.history.rawValue, imageName: Categories.history.rawValue)
+            cell.configureCell(title: Categories.history.rawValue, imageName: Images.history.rawValue)
         case 1:
-            cell.configureCell(title: Categories.sports.rawValue, imageName: Categories.sports.rawValue)
+            cell.configureCell(title: Categories.sports.rawValue, imageName: Images.sports.rawValue)
         case 2:
-            cell.configureCell(title: Categories.science.rawValue, imageName: Categories.science.rawValue)
+            cell.configureCell(title: Categories.science.rawValue, imageName: Images.science.rawValue)
         case 3:
-            cell.configureCell(title: Categories.music.rawValue, imageName: Categories.music.rawValue)
+            cell.configureCell(title: Categories.music.rawValue, imageName: Images.music.rawValue)
         case 4:
-            cell.configureCell(title: Categories.movie.rawValue, imageName: Categories.movie.rawValue)
+            cell.configureCell(title: Categories.movie.rawValue, imageName: Images.movie.rawValue)
         default:
             print("")
         }
