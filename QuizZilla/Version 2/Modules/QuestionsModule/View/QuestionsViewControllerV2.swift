@@ -126,5 +126,4 @@ extension QuestionsViewControllerV2: QuestionsCollectionViewCellDelegateV2{
             return marks
         }
     }
-    
 }
