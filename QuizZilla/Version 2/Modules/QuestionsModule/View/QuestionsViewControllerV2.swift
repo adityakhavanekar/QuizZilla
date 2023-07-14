@@ -36,7 +36,7 @@ class QuestionsViewControllerV2: UIViewController {
     private func setupUI(){
         navigationController?.navigationBar.isHidden = true
         categoryLbl.text = categoryStr
-        backButton.applyLiftedShadowEffect(cornerRadius: backButton.frame.height/2)
+        backButton.applyLiftedShadowEffectToButton(cornerRadius: backButton.frame.height/2)
         setupBannerAd()
         setupCollectionView()
         viewModel?.getQuestions {

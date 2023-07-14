@@ -35,7 +35,7 @@ extension UIColor {
 }
 
 extension UIButton {
-    func applyLiftedShadowEffect(cornerRadius:CGFloat) {
+    func applyLiftedShadowEffectToButton(cornerRadius:CGFloat) {
         layer.cornerRadius = cornerRadius
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.2
