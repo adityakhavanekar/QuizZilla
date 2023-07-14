@@ -70,3 +70,8 @@ enum Images:String {
     case tip = "tip"
     
 }
+
+enum Animations:String{
+    case celebration = "Celebration"
+    case tryAgain = "tryAgain"
+}

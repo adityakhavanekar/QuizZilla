@@ -112,9 +112,9 @@ extension QuestionsViewControllerV2: QuestionsCollectionViewCellDelegateV2{
                 if let count = viewModel?.getQuestionsCount(){
                     let percentage = calculatePercentage(marksObtained: Double(self.scorePoints), totalMarks: Double(count))
                     if percentage >= 50{
-                        vc.configure(percentage: "\(percentage)% Score", congoString: "Congrats", colorHexCode: "#3CB572", animationString: "Celebration")
+                        vc.configure(percentage: "\(percentage)% Score", congoString: "Congrats", colorHexCode: ColorEnums.correct.rawValue, animationString: Animations.celebration.rawValue)
                     }else if percentage < 50{
-                        vc.configure(percentage: "\(percentage)% Score", congoString: "Try Again", colorHexCode: "#FF5252", animationString: "tryAgain")
+                        vc.configure(percentage: "\(percentage)% Score", congoString: "Try Again", colorHexCode: ColorEnums.wrong.rawValue, animationString: Animations.tryAgain.rawValue)
                     }
                 }
                 self.navigationController?.pushViewController(vc, animated: true)
