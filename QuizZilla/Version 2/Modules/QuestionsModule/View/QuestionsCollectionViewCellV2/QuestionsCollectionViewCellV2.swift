@@ -121,6 +121,28 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         option4AlphaTitleLbl.textColor = .black
     }
     
+    func setupCell(model:TriviaElementV2,questionNumber:Int){
+        questionNumberLbl.text = "Question \(questionNumber)"
+        questionTitleLbl.text = model.question
+        
+        option1TitleLbl.text = model.options[0]
+        option2TitleLbl.text = model.options[1]
+        option3TitleLbl.text = model.options[2]
+        option4TitleLbl.text = model.options[3]
+        
+        option1Btn.setTitle(model.options[0], for: .normal)
+        option2Btn.setTitle(model.options[1], for: .normal)
+        option3Btn.setTitle(model.options[2], for: .normal)
+        option4Btn.setTitle(model.options[3], for: .normal)
+        
+        correctAns = model.ca
+        
+        hintImgView.sd_setImage(with: URL(string: model.imageURL ?? "")) { image, err, cach, ur in
+            self.hintImgView.applyBlurEffect()
+            self.hintImgView.alpha = 0.5
+        }
+    }
+    
     private func makeOptionsDisable(labels:[UILabel]){
         var count = 0
         for lbl in labels{
@@ -223,28 +245,6 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
             view.animateView(correct: false)
             view.backgroundColor = UIColor.init(hex: ColorEnums.wrong.rawValue)
             delegate?.optionTapped(cell: self, points: 0)
-        }
-    }
-    
-    func setupCell(model:TriviaElementV2,questionNumber:Int){
-        questionNumberLbl.text = "Question \(questionNumber)"
-        questionTitleLbl.text = model.question
-        
-        option1TitleLbl.text = model.options[0]
-        option2TitleLbl.text = model.options[1]
-        option3TitleLbl.text = model.options[2]
-        option4TitleLbl.text = model.options[3]
-        
-        option1Btn.setTitle(model.options[0], for: .normal)
-        option2Btn.setTitle(model.options[1], for: .normal)
-        option3Btn.setTitle(model.options[2], for: .normal)
-        option4Btn.setTitle(model.options[3], for: .normal)
-        
-        correctAns = model.ca
-        
-        hintImgView.sd_setImage(with: URL(string: model.imageURL ?? "")) { image, err, cach, ur in
-            self.hintImgView.applyBlurEffect()
-            self.hintImgView.alpha = 0.5
         }
     }
 }
