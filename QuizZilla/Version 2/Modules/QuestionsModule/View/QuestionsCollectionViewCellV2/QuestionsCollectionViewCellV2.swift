@@ -48,8 +48,8 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     @IBOutlet weak var questionNumberLbl: UILabel!
     @IBOutlet weak var questionTitleLbl: UILabel!
     
-    var correctAns : String?
     var delegate : QuestionsCollectionViewCellDelegateV2?
+    var correctAns : String?
     var hintUsed : Bool = false
     
     override func awakeFromNib() {
