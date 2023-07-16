@@ -68,7 +68,6 @@ enum Images:String {
     case qPoint = "point"
     case tipUsed = "tipUsed"
     case tip = "tip"
-    
 }
 
 enum Animations:String{
