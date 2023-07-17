@@ -50,7 +50,15 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     
     var delegate : QuestionsCollectionViewCellDelegateV2?
     var correctAns : String?
-    var hintUsed : Bool = false
+    var hintUsed : Bool = false {
+        didSet {
+            if hintUsed == true{
+                hintBtn.setImage(UIImage(named: Images.tipUsed.rawValue), for: .normal)
+            }else{
+                hintBtn.setImage(UIImage(named: Images.tip.rawValue), for: .normal)
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -62,8 +70,6 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     }
     
     private func setupUI(){
-        
-        self.hintBtn.setImage(UIImage(named: Images.tip.rawValue), for: .normal)
         
         isUserInteractionEnabled = true
         hintUsed = false
@@ -182,7 +188,6 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         if hintUsed == false{
             makeOptionsDisable(labels: [option1TitleLbl,option2TitleLbl,option3TitleLbl,option4TitleLbl])
             hintUsed = true
-            self.hintBtn.setImage(UIImage(named: Images.tip.rawValue), for: .normal)
         }
     }
     
