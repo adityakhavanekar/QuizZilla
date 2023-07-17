@@ -41,7 +41,6 @@ class QuestionsViewControllerV2: UIViewController {
         setupBannerAd()
         setupCollectionView()
         activityIndicator = showActivityIndicator(in: self.view)
-        self.adView.isHidden = true
         viewModel?.getQuestionsNew {
             DispatchQueue.main.async {
                 self.questionCollectionView.reloadData()
