@@ -39,7 +39,7 @@ class QuestionsViewControllerV2: UIViewController {
         backButton.applyLiftedShadowEffectToButton(cornerRadius: backButton.frame.height/2)
         setupBannerAd()
         setupCollectionView()
-        viewModel?.getQuestions {
+        viewModel?.getQuestionsNew {
             DispatchQueue.main.async {
                 self.questionCollectionView.reloadData()
             }

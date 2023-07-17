@@ -33,6 +33,23 @@ class QuestionsViewModelV2{
         }
     }
     
+    func getQuestionsNew(completion:@escaping ()->()){
+        NetworkManager.shared.request(url: url,method: .get,params: nil,headers: ["apiKey":APIKeys.mongoApiKey.rawValue]) { data in
+            switch data{
+            case .success(let gotData):
+                do{
+                    let jsonData = try JSONDecoder().decode([TriviaElementV2].self, from: gotData)
+                    self.questions = jsonData.shuffled()
+                    completion()
+                }catch{
+                    print("error")
+                }
+            case .failure(_):
+                print("Error")
+            }
+        }
+    }
+    
     func getQuestionsCount()->Int?{
         self.questions?.count
     }

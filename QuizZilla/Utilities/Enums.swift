@@ -14,6 +14,7 @@ enum ColorEnums:String{
 
 enum APIEndpoints: String {
     private var baseURL: String { return "http://207.154.204.149:3050" }
+    private var baseUrlNew:String { return "https://data.mongodb-api.com/app/application-1-ontwl/endpoint/quizilla"}
 
     case history = "/historyQuestions"
     case sports = "/sportQuestions"
@@ -21,8 +22,20 @@ enum APIEndpoints: String {
     case music = "/musicQuestions"
     case movie = "/movieQuestions"
     
+    case historyNew = "/historys"
+    case sportsNew = "/sports"
+    case scienceNew = "/sciences"
+    case musicNew = "/musics"
+    case movieNew = "/movies"
+    
     var url: URL {
         guard let url = URL(string: baseURL) else {
+            preconditionFailure("The url used in \(APIEndpoints.self) is not valid")
+        }
+        return url.appendingPathComponent(self.rawValue)
+    }
+    var urlNew: URL {
+        guard let url = URL(string: baseUrlNew) else {
             preconditionFailure("The url used in \(APIEndpoints.self) is not valid")
         }
         return url.appendingPathComponent(self.rawValue)
@@ -73,4 +86,8 @@ enum Images:String {
 enum Animations:String{
     case celebration = "Celebration"
     case tryAgain = "tryAgain"
+}
+
+enum APIKeys:String{
+    case mongoApiKey = "C4yuxxH0wfb5w4VXEWNC6UlQHJDzE39ZqmFHbD7ILyeX6KZPaUYpJEmQcxexOFO6"
 }
