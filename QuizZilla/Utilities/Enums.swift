@@ -55,9 +55,9 @@ enum HomeCells:String{
 }
 
 enum QuestionCells:String{
-    case QuestionsCollectionViewCell = "QuestionsCollectionViewCell"
-    case QuestionsCollectionViewCellV2 = "QuestionsCollectionViewCellV2"
-    case NewQuestionsCollectionViewCell = "NewQuestionsCollectionViewCell"
+    case questionsCollectionViewCell = "QuestionsCollectionViewCell"
+    case questionsCollectionViewCellV2 = "QuestionsCollectionViewCellV2"
+    case newQuestionsCollectionViewCell = "NewQuestionsCollectionViewCell"
 }
 
 enum Adverts:String{

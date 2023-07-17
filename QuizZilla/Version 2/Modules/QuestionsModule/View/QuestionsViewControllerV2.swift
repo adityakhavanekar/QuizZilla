@@ -58,7 +58,7 @@ class QuestionsViewControllerV2: UIViewController {
     }
     
     private func setupCollectionView(){
-        questionCollectionView.register(UINib(nibName: QuestionCells.QuestionsCollectionViewCellV2.rawValue, bundle: nil), forCellWithReuseIdentifier: QuestionCells.QuestionsCollectionViewCellV2.rawValue)
+        questionCollectionView.register(UINib(nibName: QuestionCells.questionsCollectionViewCellV2.rawValue, bundle: nil), forCellWithReuseIdentifier: QuestionCells.questionsCollectionViewCellV2.rawValue)
         questionCollectionView.delegate = self
         questionCollectionView.dataSource = self
     }
@@ -96,7 +96,7 @@ extension QuestionsViewControllerV2: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = questionCollectionView.dequeueReusableCell(withReuseIdentifier: QuestionCells.QuestionsCollectionViewCellV2.rawValue, for: indexPath) as! QuestionsCollectionViewCellV2
+        let cell = questionCollectionView.dequeueReusableCell(withReuseIdentifier: QuestionCells.questionsCollectionViewCellV2.rawValue, for: indexPath) as! QuestionsCollectionViewCellV2
         if let data = viewModel?.getQuestion(index: indexPath.row){
             var model = data
             model.options.shuffle()
