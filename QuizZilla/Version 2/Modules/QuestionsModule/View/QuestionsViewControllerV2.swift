@@ -16,6 +16,7 @@ class QuestionsViewControllerV2: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var adView: UIView!
     
+    var activityIndicator : UIActivityIndicatorView?
     var viewModel:QuestionsViewModelV2?
     var categoryStr: String = ""
     var scorePoints:Int = 0
@@ -39,9 +40,12 @@ class QuestionsViewControllerV2: UIViewController {
         backButton.applyLiftedShadowEffectToButton(cornerRadius: backButton.frame.height/2)
         setupBannerAd()
         setupCollectionView()
+        activityIndicator = showActivityIndicator(in: self.view)
+        self.adView.isHidden = true
         viewModel?.getQuestionsNew {
             DispatchQueue.main.async {
                 self.questionCollectionView.reloadData()
+                self.hideActivityIndicator(self.activityIndicator ?? UIActivityIndicatorView())
             }
         }
     }
@@ -58,6 +62,28 @@ class QuestionsViewControllerV2: UIViewController {
         questionCollectionView.register(UINib(nibName: QuestionCells.QuestionsCollectionViewCellV2.rawValue, bundle: nil), forCellWithReuseIdentifier: QuestionCells.QuestionsCollectionViewCellV2.rawValue)
         questionCollectionView.delegate = self
         questionCollectionView.dataSource = self
+    }
+    
+    func showActivityIndicator(in view: UIView) -> UIActivityIndicatorView {
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .gray
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(activityIndicator)
+        
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        
+        return activityIndicator
+    }
+
+    func hideActivityIndicator(_ activityIndicator: UIActivityIndicatorView) {
+        activityIndicator.stopAnimating()
+        activityIndicator.removeFromSuperview()
     }
     
     @IBAction func backBtnTapped(_ sender: UIButton) {
