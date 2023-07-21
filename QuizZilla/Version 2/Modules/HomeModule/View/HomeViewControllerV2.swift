@@ -94,19 +94,19 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
         switch indexPath.row{
         case 0:
             vc.categoryStr = Categories.history.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.historyNew.urlNew)
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.history.urlNew)
         case 1:
             vc.categoryStr = Categories.sports.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.sportsNew.urlNew)
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.sports.urlNew)
         case 2:
             vc.categoryStr = Categories.science.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.scienceNew.urlNew)
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.science.urlNew)
         case 3:
             vc.categoryStr = Categories.music.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.musicNew.urlNew)
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.music.urlNew)
         case 4:
             vc.categoryStr = Categories.movie.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.movieNew.urlNew)
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.movie.urlNew)
         default:
             print("")
         }

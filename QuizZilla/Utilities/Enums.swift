@@ -22,12 +22,6 @@ enum APIEndpoints: String {
     case music = "/musicQuestions"
     case movie = "/movieQuestions"
     
-    case historyNew = "/historys"
-    case sportsNew = "/sports"
-    case scienceNew = "/sciences"
-    case musicNew = "/musics"
-    case movieNew = "/movies"
-    
     var url: URL {
         guard let url = URL(string: baseURL) else {
             preconditionFailure("The url used in \(APIEndpoints.self) is not valid")
