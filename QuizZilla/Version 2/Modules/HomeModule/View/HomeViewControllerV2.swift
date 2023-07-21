@@ -90,26 +90,24 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = QuestionsViewControllerV2()
         switch indexPath.row{
         case 0:
-            vc.categoryStr = Categories.history.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.history.urlNew)
+            let vc = QuestionsViewControllerV2(viewModel: QuestionsViewModelV2(url: APIEndpoints.history.urlNew))
+            navigationController?.pushViewController(vc, animated: true)
         case 1:
-            vc.categoryStr = Categories.sports.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.sports.urlNew)
+            let vc = QuestionsViewControllerV2(viewModel: QuestionsViewModelV2(url: APIEndpoints.sports.urlNew))
+            navigationController?.pushViewController(vc, animated: true)
         case 2:
-            vc.categoryStr = Categories.science.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.science.urlNew)
+            let vc = QuestionsViewControllerV2(viewModel: QuestionsViewModelV2(url: APIEndpoints.science.urlNew))
+            navigationController?.pushViewController(vc, animated: true)
         case 3:
-            vc.categoryStr = Categories.music.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.music.urlNew)
+            let vc = QuestionsViewControllerV2(viewModel: QuestionsViewModelV2(url: APIEndpoints.music.urlNew))
+            navigationController?.pushViewController(vc, animated: true)
         case 4:
-            vc.categoryStr = Categories.movie.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.movie.urlNew)
+            let vc = QuestionsViewControllerV2(viewModel: QuestionsViewModelV2(url: APIEndpoints.movie.urlNew))
+            navigationController?.pushViewController(vc, animated: true)
         default:
             print("")
         }
-        navigationController?.pushViewController(vc, animated: true)
     }
 }

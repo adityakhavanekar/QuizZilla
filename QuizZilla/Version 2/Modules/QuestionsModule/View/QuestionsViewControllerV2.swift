@@ -29,6 +29,15 @@ class QuestionsViewControllerV2: UIViewController {
         return banner
     }()
     
+    init(viewModel: QuestionsViewModelV2) {
+        super.init(nibName: "QuestionsViewControllerV2", bundle: nil)
+        self.viewModel = viewModel
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
