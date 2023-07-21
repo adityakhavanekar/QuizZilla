@@ -196,9 +196,9 @@
 		182342442A5B35BB00429A2B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				1823424A2A5B366B00429A2B /* HomeModule */,
-				18D3BCE02A5D396900E07DA7 /* QuestionsModule */,
 				1832D5332A5F3D4C00973D5B /* ResultModule */,
+				18D3BCE02A5D396900E07DA7 /* QuestionsModule */,
+				1823424A2A5B366B00429A2B /* HomeModule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
