@@ -24,10 +24,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5U6-Ra-CRI" userLabel="TopView">
-                    <rect key="frame" x="0.0" y="0.0" width="393" height="250"/>
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="200"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to Play?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hub-22-TpB">
-                            <rect key="frame" x="20" y="140" width="353" height="30"/>
+                            <rect key="frame" x="20" y="90" width="353" height="30"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -36,7 +36,7 @@
                             </variation>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kf-y2-LSd">
-                            <rect key="frame" x="20" y="109.66666666666667" width="353" height="20.333333333333329"/>
+                            <rect key="frame" x="20" y="59.666666666666664" width="353" height="20.333333333333336"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                             <color key="textColor" white="0.80013955044908591" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -52,17 +52,17 @@
                         <constraint firstItem="hub-22-TpB" firstAttribute="top" secondItem="7kf-y2-LSd" secondAttribute="bottom" constant="10" id="IbS-UL-FyE"/>
                         <constraint firstAttribute="bottom" secondItem="hub-22-TpB" secondAttribute="bottom" constant="80" id="IkQ-1Q-5hr"/>
                         <constraint firstItem="7kf-y2-LSd" firstAttribute="leading" secondItem="5U6-Ra-CRI" secondAttribute="leading" constant="20" id="eHO-9h-etO"/>
-                        <constraint firstAttribute="height" constant="250" id="uen-Vw-Izv">
+                        <constraint firstAttribute="height" constant="200" id="uen-Vw-Izv">
                             <variation key="heightClass=regular-widthClass=regular" constant="300"/>
                         </constraint>
                         <constraint firstAttribute="trailing" secondItem="7kf-y2-LSd" secondAttribute="trailing" constant="20" id="yu3-oH-R4A"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2W-uL-hmc" userLabel="categoryView">
-                    <rect key="frame" x="0.0" y="200" width="393" height="575.33333333333337"/>
+                    <rect key="frame" x="0.0" y="150" width="393" height="625.33333333333337"/>
                     <subviews>
                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="tFu-29-NiS">
-                            <rect key="frame" x="15" y="50" width="363" height="525.33333333333337"/>
+                            <rect key="frame" x="15" y="50" width="363" height="575.33333333333337"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6Cx-6B-5YE">
                                 <size key="itemSize" width="128" height="128"/>
