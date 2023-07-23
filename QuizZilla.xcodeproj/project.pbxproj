@@ -206,8 +206,8 @@
 		1823424A2A5B366B00429A2B /* HomeModule */ = {
 			isa = PBXGroup;
 			children = (
-				1823424D2A5B368A00429A2B /* Model */,
-				1823424C2A5B368500429A2B /* ViewModel */,
+				18C86DA02A6D65DE004B86D0 /* Model */,
+				18C86D9F2A6D65D2004B86D0 /* ViewModel */,
 				1823424B2A5B367B00429A2B /* View */,
 			);
 			path = HomeModule;
@@ -221,20 +221,6 @@
 				1823424F2A5B36C000429A2B /* HomeViewControllerV2.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		1823424C2A5B368500429A2B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		1823424D2A5B368A00429A2B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		182342522A5B42F400429A2B /* CategoryCollectionViewCell */ = {
@@ -433,6 +419,20 @@
 				185072BB2A0A136C0027A10F /* Home Module */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		18C86D9F2A6D65D2004B86D0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		18C86DA02A6D65DE004B86D0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		18D3BCE02A5D396900E07DA7 /* QuestionsModule */ = {
