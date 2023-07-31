@@ -36,11 +36,11 @@ class QuestionsViewControllerV2: UIViewController {
     
     private func setupUI(){
         navigationController?.navigationBar.isHidden = true
+        activityIndicator = showActivityIndicator(in: self.view)
         categoryLbl.text = categoryStr
         backButton.applyLiftedShadowEffectToButton(cornerRadius: backButton.frame.height/2)
         setupBannerAd()
         setupCollectionView()
-        activityIndicator = showActivityIndicator(in: self.view)
         viewModel?.getQuestionsNew {
             DispatchQueue.main.async {
                 self.questionCollectionView.reloadData()
@@ -63,7 +63,7 @@ class QuestionsViewControllerV2: UIViewController {
         questionCollectionView.dataSource = self
     }
     
-    func showActivityIndicator(in view: UIView) -> UIActivityIndicatorView {
+    private func showActivityIndicator(in view: UIView) -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView(style: .large)
         activityIndicator.color = .gray
         activityIndicator.translatesAutoresizingMaskIntoConstraints = false
@@ -80,7 +80,7 @@ class QuestionsViewControllerV2: UIViewController {
         return activityIndicator
     }
 
-    func hideActivityIndicator(_ activityIndicator: UIActivityIndicatorView) {
+    private func hideActivityIndicator(_ activityIndicator: UIActivityIndicatorView) {
         activityIndicator.stopAnimating()
         activityIndicator.removeFromSuperview()
     }
@@ -145,10 +145,10 @@ extension QuestionsViewControllerV2: QuestionsCollectionViewCellDelegateV2{
                 navigationController?.pushViewController(vc, animated: true)
             }
         }
-        
-        func calculatePercentage(marksObtained: Double, totalMarks: Double) -> Int {
-            let marks = Int((marksObtained / totalMarks) * 100.0)
-            return marks
-        }
+    }
+    
+    func calculatePercentage(marksObtained: Double, totalMarks: Double) -> Int {
+        let marks = Int((marksObtained / totalMarks) * 100.0)
+        return marks
     }
 }
