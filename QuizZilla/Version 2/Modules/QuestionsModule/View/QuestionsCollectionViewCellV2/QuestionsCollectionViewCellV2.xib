@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -289,17 +289,17 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5Q-D3-1UU">
-                                <rect key="frame" x="407" y="24" width="30" height="30"/>
+                                <rect key="frame" x="397" y="24" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Rju-FW-F8a">
+                                    <constraint firstAttribute="width" constant="40" id="Rju-FW-F8a">
                                         <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                                     </constraint>
-                                    <constraint firstAttribute="height" constant="30" id="eFo-39-rkX">
+                                    <constraint firstAttribute="height" constant="40" id="eFo-39-rkX">
                                         <variation key="heightClass=regular-widthClass=regular" constant="60"/>
                                     </constraint>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="tip"/>
+                                <state key="normal" image="tipWithAd"/>
                                 <connections>
                                     <action selector="hintBtnTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="NFF-RA-YKJ"/>
                                 </connections>
@@ -313,7 +313,7 @@
                             <constraint firstAttribute="trailing" secondItem="a5Q-D3-1UU" secondAttribute="trailing" constant="40" id="Nlz-Xw-9YS"/>
                             <constraint firstItem="H25-qg-sYp" firstAttribute="leading" secondItem="Dxr-HX-K10" secondAttribute="leading" constant="40" id="WwA-qB-vM1"/>
                             <constraint firstAttribute="trailing" secondItem="8RW-Nr-dY4" secondAttribute="trailing" constant="40" id="XBM-PH-N0X"/>
-                            <constraint firstItem="8RW-Nr-dY4" firstAttribute="top" secondItem="a5Q-D3-1UU" secondAttribute="bottom" constant="30" id="Ydq-xN-Emb"/>
+                            <constraint firstItem="8RW-Nr-dY4" firstAttribute="top" secondItem="a5Q-D3-1UU" secondAttribute="bottom" constant="20" id="Ydq-xN-Emb"/>
                             <constraint firstItem="x8c-eT-skD" firstAttribute="top" secondItem="8RW-Nr-dY4" secondAttribute="bottom" constant="40" id="Z4a-Hc-PMY"/>
                             <constraint firstItem="8RW-Nr-dY4" firstAttribute="top" secondItem="H25-qg-sYp" secondAttribute="bottom" constant="30" id="aNj-Mx-NrQ"/>
                             <constraint firstItem="8RW-Nr-dY4" firstAttribute="leading" secondItem="Dxr-HX-K10" secondAttribute="leading" constant="40" id="bvy-ZX-bKZ"/>
@@ -364,7 +364,7 @@
     </objects>
     <resources>
         <image name="america" width="976" height="645"/>
-        <image name="tip" width="512" height="512"/>
+        <image name="tipWithAd" width="486" height="484"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
