@@ -53,9 +53,9 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
     var hintUsed : Bool = false {
         didSet {
             if hintUsed == true{
-                hintBtn.setImage(UIImage(named: Images.tipUsed.rawValue), for: .normal)
+                hintBtn.setImage(UIImage(named: Images.tipUsed), for: .normal)
             }else{
-                hintBtn.setImage(UIImage(named: Images.tip.rawValue), for: .normal)
+                hintBtn.setImage(UIImage(named: Images.tip), for: .normal)
             }
         }
     }
@@ -159,7 +159,7 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
                     count += 1
                     lbl.textColor = .white
                     lbl.superview?.isUserInteractionEnabled = false
-                    lbl.superview?.seaSawView(hexString: ColorEnums.wrong.rawValue)
+                    lbl.superview?.seaSawView(hexString: Colors.wrong)
                     switch lbl{
                     case option1TitleLbl:
                         option1AlphaTitleLbl.textColor = .white
@@ -244,11 +244,11 @@ class QuestionsCollectionViewCellV2: UICollectionViewCell {
         switch isCorrect{
         case true:
             view.animateView(correct: true)
-            view.backgroundColor = UIColor.init(hex: ColorEnums.correct.rawValue)
+            view.backgroundColor = UIColor.init(hex: Colors.correct)
             delegate?.optionTapped(cell: self, points: 1)
         case false:
             view.animateView(correct: false)
-            view.backgroundColor = UIColor.init(hex: ColorEnums.wrong.rawValue)
+            view.backgroundColor = UIColor.init(hex: Colors.wrong)
             delegate?.optionTapped(cell: self, points: 0)
         }
     }

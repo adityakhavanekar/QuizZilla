@@ -23,7 +23,7 @@ class QuestionsViewControllerV2: UIViewController {
     
     private let banner:GADBannerView = {
         let banner = GADBannerView()
-        banner.adUnitID = Adverts.bannerAdTest.rawValue
+        banner.adUnitID = Adverts.bannerAd
         banner.load(GADRequest())
         banner.backgroundColor = .clear
         return banner
@@ -58,7 +58,7 @@ class QuestionsViewControllerV2: UIViewController {
     }
     
     private func setupCollectionView(){
-        questionCollectionView.register(UINib(nibName: QuestionCells.questionsCollectionViewCellV2.rawValue, bundle: nil), forCellWithReuseIdentifier: QuestionCells.questionsCollectionViewCellV2.rawValue)
+        questionCollectionView.register(UINib(nibName: CollectionViewCells.questionsCollectionViewCellV2, bundle: nil), forCellWithReuseIdentifier: CollectionViewCells.questionsCollectionViewCellV2)
         questionCollectionView.delegate = self
         questionCollectionView.dataSource = self
     }
@@ -96,7 +96,7 @@ extension QuestionsViewControllerV2: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = questionCollectionView.dequeueReusableCell(withReuseIdentifier: QuestionCells.questionsCollectionViewCellV2.rawValue, for: indexPath) as! QuestionsCollectionViewCellV2
+        let cell = questionCollectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCells.questionsCollectionViewCellV2, for: indexPath) as! QuestionsCollectionViewCellV2
         if let data = viewModel?.getQuestion(index: indexPath.row){
             var model = data
             model.options.shuffle()
@@ -137,9 +137,9 @@ extension QuestionsViewControllerV2: QuestionsCollectionViewCellDelegateV2{
                 if let count = viewModel?.getQuestionsCount(){
                     let percentage = calculatePercentage(marksObtained: Double(scorePoints), totalMarks: Double(count))
                     if percentage >= 50{
-                        vc.configure(percentage: "\(percentage)% Score", congoString: "Congrats", colorHexCode: ColorEnums.correct.rawValue, animationString: Animations.celebration.rawValue)
+                        vc.configure(percentage: "\(percentage)% Score", congoString: "Congrats", colorHexCode: Colors.correct, animationString: Animations.celebration)
                     }else if percentage < 50{
-                        vc.configure(percentage: "\(percentage)% Score", congoString: "Try Again", colorHexCode: ColorEnums.wrong.rawValue, animationString: Animations.tryAgain.rawValue)
+                        vc.configure(percentage: "\(percentage)% Score", congoString: "Try Again", colorHexCode: Colors.wrong, animationString: Animations.tryAgain)
                     }
                 }
                 navigationController?.pushViewController(vc, animated: true)

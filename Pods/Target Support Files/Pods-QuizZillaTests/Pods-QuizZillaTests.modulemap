@@ -1,0 +1,6 @@
+framework module Pods_QuizZillaTests {
+  umbrella header "Pods-QuizZillaTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

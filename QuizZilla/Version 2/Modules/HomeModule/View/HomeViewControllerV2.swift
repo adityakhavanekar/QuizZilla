@@ -17,7 +17,7 @@ class HomeViewControllerV2: UIViewController {
     
     private let banner:GADBannerView = {
         let banner = GADBannerView()
-        banner.adUnitID = Adverts.bannerAdTest.rawValue
+        banner.adUnitID = Adverts.bannerAd
         banner.load(GADRequest())
         banner.backgroundColor = .clear
         return banner
@@ -46,7 +46,7 @@ class HomeViewControllerV2: UIViewController {
     }
     
     private func setupCollectionView(){
-        categoryCollectionView.register(UINib(nibName: HomeCells.categoryCell.rawValue, bundle: nil), forCellWithReuseIdentifier: HomeCells.categoryCell.rawValue)
+        categoryCollectionView.register(UINib(nibName: CollectionViewCells.categoryCell, bundle: nil), forCellWithReuseIdentifier: CollectionViewCells.categoryCell)
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
     }
@@ -58,18 +58,18 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: HomeCells.categoryCell.rawValue, for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
+        guard let cell = categoryCollectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCells.categoryCell, for: indexPath) as? CategoryCollectionViewCell else {return UICollectionViewCell()}
         switch indexPath.item{
         case 0:
-            cell.configureCell(title: Categories.history.rawValue, imageName: Images.history.rawValue)
+            cell.configureCell(title: Categories.history, imageName: Images.history)
         case 1:
-            cell.configureCell(title: Categories.sports.rawValue, imageName: Images.sports.rawValue)
+            cell.configureCell(title: Categories.sports, imageName: Images.sports)
         case 2:
-            cell.configureCell(title: Categories.science.rawValue, imageName: Images.science.rawValue)
+            cell.configureCell(title: Categories.science, imageName: Images.science)
         case 3:
-            cell.configureCell(title: Categories.music.rawValue, imageName: Images.music.rawValue)
+            cell.configureCell(title: Categories.music, imageName: Images.music)
         case 4:
-            cell.configureCell(title: Categories.movie.rawValue, imageName: Images.movie.rawValue)
+            cell.configureCell(title: Categories.movie, imageName: Images.movie)
         default:
             print("")
         }
@@ -93,20 +93,20 @@ extension HomeViewControllerV2: UICollectionViewDelegate, UICollectionViewDataSo
         let vc = QuestionsViewControllerV2()
         switch indexPath.row{
         case 0:
-            vc.categoryStr = Categories.history.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.history.urlNew)
+            vc.categoryStr = Categories.history
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.history.url)
         case 1:
-            vc.categoryStr = Categories.sports.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.sports.urlNew)
+            vc.categoryStr = Categories.sports
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.sports.url)
         case 2:
-            vc.categoryStr = Categories.science.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.science.urlNew)
+            vc.categoryStr = Categories.science
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.science.url)
         case 3:
-            vc.categoryStr = Categories.music.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.music.urlNew)
+            vc.categoryStr = Categories.music
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.music.url)
         case 4:
-            vc.categoryStr = Categories.movie.rawValue
-            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.movie.urlNew)
+            vc.categoryStr = Categories.movie
+            vc.viewModel = QuestionsViewModelV2(url: APIEndpoints.movie.url)
         default:
             print("")
         }
