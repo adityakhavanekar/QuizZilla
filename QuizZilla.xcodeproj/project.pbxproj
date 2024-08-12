@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		181CB2492A123E09007C4815 /* NewQuestionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181CB2472A123E09007C4815 /* NewQuestionsCollectionViewCell.swift */; };
 		181CB24A2A123E09007C4815 /* NewQuestionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 181CB2482A123E09007C4815 /* NewQuestionsCollectionViewCell.xib */; };
-		181CB24D2A12447A007C4815 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 181CB24C2A12447A007C4815 /* GoogleMobileAds */; };
 		182342502A5B36C000429A2B /* HomeViewControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1823424E2A5B36C000429A2B /* HomeViewControllerV2.swift */; };
 		182342512A5B36C000429A2B /* HomeViewControllerV2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1823424F2A5B36C000429A2B /* HomeViewControllerV2.xib */; };
 		1823425D2A5B447C00429A2B /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1823425B2A5B447C00429A2B /* CategoryCollectionViewCell.swift */; };
@@ -145,7 +144,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				181CB24D2A12447A007C4815 /* GoogleMobileAds in Frameworks */,
 				37B6BB651AC9154BC0504F7B /* Pods_QuizZilla.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -574,7 +572,6 @@
 			);
 			name = QuizZilla;
 			packageProductDependencies = (
-				181CB24C2A12447A007C4815 /* GoogleMobileAds */,
 			);
 			productName = QuizZilla;
 			productReference = 185072842A0A13530027A10F /* QuizZilla.app */;
@@ -652,7 +649,6 @@
 			);
 			mainGroup = 1850727B2A0A13530027A10F;
 			packageReferences = (
-				181CB24B2A12447A007C4815 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 185072852A0A13530027A10F /* Products */;
 			projectDirPath = "";
@@ -1224,25 +1220,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		181CB24B2A12447A007C4815 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		181CB24C2A12447A007C4815 /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 181CB24B2A12447A007C4815 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
-			productName = GoogleMobileAds;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		185072902A0A13530027A10F /* QuizZilla.xcdatamodeld */ = {

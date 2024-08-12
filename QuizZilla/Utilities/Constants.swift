@@ -13,7 +13,7 @@ enum Environment{
     case test
 }
 
-let environment:Environment = .production
+let environment:Environment = .test
 
 enum APIEndpoints: String {
     private var baseUrl:String {

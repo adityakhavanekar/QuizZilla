@@ -21,13 +21,13 @@ class QuestionsViewControllerV2: UIViewController {
     var categoryStr: String = ""
     var scorePoints:Int = 0
     
-    private let banner:GADBannerView = {
-        let banner = GADBannerView()
-        banner.adUnitID = Adverts.bannerAd
-        banner.load(GADRequest())
-        banner.backgroundColor = .clear
-        return banner
-    }()
+//    private let banner:GADBannerView = {
+//        let banner = GADBannerView()
+//        banner.adUnitID = Adverts.bannerAd
+//        banner.load(GADRequest())
+//        banner.backgroundColor = .clear
+//        return banner
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +50,11 @@ class QuestionsViewControllerV2: UIViewController {
     }
     
     private func setupBannerAd(){
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.2){
-            self.banner.rootViewController = self
-            self.banner.frame = self.adView.bounds
-            self.adView.addSubview(self.banner)
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now()+0.2){
+//            self.banner.rootViewController = self
+//            self.banner.frame = self.adView.bounds
+//            self.adView.addSubview(self.banner)
+//        }
     }
     
     private func setupCollectionView(){
