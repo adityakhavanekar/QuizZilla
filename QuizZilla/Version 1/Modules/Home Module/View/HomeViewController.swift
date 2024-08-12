@@ -18,23 +18,23 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var questionLbl: UILabel!
     @IBOutlet weak var adView: UIView!
     
-    private let banner:GADBannerView = {
-        let banner = GADBannerView()
+//    private let banner:GADBannerView = {
+//        let banner = GADBannerView()
 //        ca-app-pub-8260816350989246/3781983591
 //TESTAD: ca-app-pub-3940256099942544/2934735716
-        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        banner.load(GADRequest())
-        banner.backgroundColor = .clear
-        return banner
-    }()
+//        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+//        banner.load(GADRequest())
+//        banner.backgroundColor = .clear
+//        return banner
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        banner.rootViewController = self
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.2){
-            self.banner.frame = self.adView.bounds
-            self.adView.addSubview(self.banner)
-        }
+//        banner.rootViewController = self
+//        DispatchQueue.main.asyncAfter(deadline: .now()+0.2){
+//            self.banner.frame = self.adView.bounds
+//            self.adView.addSubview(self.banner)
+//        }
         setupUI()
     }
     override func viewDidAppear(_ animated: Bool) {
