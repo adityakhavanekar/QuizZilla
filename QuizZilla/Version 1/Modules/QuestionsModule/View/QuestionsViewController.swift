@@ -21,8 +21,8 @@ class QuestionsViewController: UIViewController {
     var viewModel : QuestionsViewModel?
     var categoryStr: String?
     
-    private var interstitial: GADInterstitialAd?
-    private let request = GADRequest()
+//    private var interstitial: GADInterstitialAd?
+//    private let request = GADRequest()
     
     var points:Int = 0 {
         didSet{
@@ -31,22 +31,22 @@ class QuestionsViewController: UIViewController {
         }
     }
     
-    private let banner:GADBannerView = {
-        let banner = GADBannerView()
-        //        ca-app-pub-8260816350989246/3781983591
-        //TESTAD: ca-app-pub-3940256099942544/2934735716
-        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
-        banner.load(GADRequest())
-        banner.backgroundColor = .red
-        return banner
-    }()
+//    private let banner:GADBannerView = {
+//        let banner = GADBannerView()
+//        //        ca-app-pub-8260816350989246/3781983591
+//        //TESTAD: ca-app-pub-3940256099942544/2934735716
+//        banner.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+//        banner.load(GADRequest())
+//        banner.backgroundColor = .red
+//        return banner
+//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        banner.rootViewController = self
+//        banner.rootViewController = self
         DispatchQueue.main.asyncAfter(deadline: .now()+0.2){
-            self.banner.frame = self.adView.bounds
-            self.adView.addSubview(self.banner)
+//            self.banner.frame = self.adView.bounds
+//            self.adView.addSubview(self.banner)
         }
         setupUI()
     }
@@ -172,34 +172,34 @@ extension QuestionsViewController:ShowAd{
     func showAd() {
 //        ca-app-pub-8260816350989246/5262687856
 //Test    ca-app-pub-3940256099942544/4411468910
-        GADInterstitialAd.load(withAdUnitID: "ca-app-pub-3940256099942544/4411468910",
-                               request: request,
-                               completionHandler: { [self] ad, error in
-            if let error = error {
-                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                return
-            }
-            interstitial = ad
-        }
-        )
-        if interstitial != nil {
-            interstitial?.present(fromRootViewController: self)
-          } else {
-            print("Ad wasn't ready")
-          }
+//        GADInterstitialAd.load(withAdUnitID: "ca-app-pub-3940256099942544/4411468910",
+//                               request: request,
+//                               completionHandler: { [self] ad, error in
+//            if let error = error {
+//                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+//                return
+//            }
+//            interstitial = ad
+//        }
+//        )
+//        if interstitial != nil {
+//            interstitial?.present(fromRootViewController: self)
+//          } else {
+//            print("Ad wasn't ready")
+//          }
     }
 }
 
-extension QuestionsViewController:GADFullScreenContentDelegate{
-    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
-        print("Ad did fail to present full screen content.")
-    }
-    
-    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad will present full screen content.")
-    }
-    
-    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
-        print("Ad did dismiss full screen content.")
-    }
-}
+//extension QuestionsViewController:GADFullScreenContentDelegate{
+//    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+//        print("Ad did fail to present full screen content.")
+//    }
+//    
+//    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+//        print("Ad will present full screen content.")
+//    }
+//    
+//    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+//        print("Ad did dismiss full screen content.")
+//    }
+//}
